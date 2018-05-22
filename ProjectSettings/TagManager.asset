@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Joint
+  - Fresh
+  - Tortoise
+  - Robot
+  - Fire
+  - Rino
+  - CanDestroy
+  - RightHand
+  - Tutorial
+  - EnemiesBase
+  - TortoiseMain
+  - RinoMain
+  - StretchingJoint
+  - StretchingRightHand
+  - RightElbow
+  - Imitator
+  - RightShoulder
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Pronama
+  - FireLayer
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0

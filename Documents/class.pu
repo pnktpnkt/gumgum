@@ -1,0 +1,29 @@
+@startuml
+title クラス図
+class ArmController{
+
+}
+
+class ArmOrientationReciever{
+
+}
+
+class Player{
+    +punch(Vector3 initialVelocity)
+}
+class SkinStretchHandler{
+
+}
+class ShiftGravityHandler{
+
+}
+
+interface ITarget{
+
+}
+
+ArmController --> ArmOrientationReciever
+ArmController --> Player
+SkinStretchHandler --> Player
+ShiftGravityHandler --> Player
+@enduml
