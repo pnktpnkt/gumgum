@@ -19,8 +19,8 @@ TagManager:
   - StretchingJoint
   - StretchingRightHand
   - RightElbow
-  - Imitator
   - RightShoulder
+  - VisibleAvatar
   layers:
   - Default
   - TransparentFX

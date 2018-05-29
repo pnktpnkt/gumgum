@@ -2,7 +2,7 @@
 using UnityEngine.Events;
 using System.Collections;
 
-public class InVisibleAvatarScript : MonoBehaviour
+public class InvisibleAvatarScript : MonoBehaviour
 {
 	private ArmState rightArmState = ArmState.Idle;
 	private ArmState leftArmState = ArmState.Idle;
