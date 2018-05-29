@@ -166,7 +166,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100058, guid: 8cd032619f919c1439f9cdc58246d32e, type: 3}
       propertyPath: m_Name
-      value: SuperStretchMan
+      value: VisibleAvatar
       objectReference: {fileID: 0}
     - target: {fileID: 9500000, guid: 8cd032619f919c1439f9cdc58246d32e, type: 3}
       propertyPath: m_Enabled
@@ -190,7 +190,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100058, guid: 8cd032619f919c1439f9cdc58246d32e, type: 3}
       propertyPath: m_TagString
-      value: Imitator
+      value: VisibleAvatar
       objectReference: {fileID: 0}
     - target: {fileID: 100090, guid: 8cd032619f919c1439f9cdc58246d32e, type: 3}
       propertyPath: m_TagString
@@ -554,7 +554,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100058, guid: 8cd032619f919c1439f9cdc58246d32e, type: 3}
       propertyPath: m_Name
-      value: SuperStretchManVRIK
+      value: InvisibleAvatar
       objectReference: {fileID: 0}
     - target: {fileID: 9500000, guid: 8cd032619f919c1439f9cdc58246d32e, type: 3}
       propertyPath: m_Enabled
@@ -3340,7 +3340,7 @@ GameObject:
 Transform:
   m_PrefabParentObject: {fileID: 400058, guid: 8cd032619f919c1439f9cdc58246d32e, type: 3}
   m_PrefabInternal: {fileID: 54974414}
---- !u!114 &1430732951
+--- !u!114 &1430732948
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -3348,7 +3348,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1430732946}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28d731ec250bcfe4a9d7aa29450377c2, type: 3}
+  m_Script: {fileID: 11500000, guid: f1bb4a4354d7dca4c90d05751f50708c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1456879665

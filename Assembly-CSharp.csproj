@@ -46,6 +46,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\ArmState.cs" />
+     <Compile Include="Assets\ArmStateReducer.cs" />
      <Compile Include="Assets\ArmStretchController.cs" />
      <Compile Include="Assets\Controller Scripts\EnemiesManager.cs" />
      <Compile Include="Assets\Controller Scripts\MotorScripts\MotorController.cs" />
@@ -65,6 +67,8 @@
      <Compile Include="Assets\Controller Scripts\TortoiseScripts\Turtle_AnimationEvents.cs" />
      <Compile Include="Assets\Controller Scripts\UIManager.cs" />
      <Compile Include="Assets\CopyPlayerMotionScript.cs" />
+     <Compile Include="Assets\InvisibleAvatarMotionImitatoor.cs" />
+     <Compile Include="Assets\InvisibleAvatarScript.cs" />
      <Compile Include="Assets\Model Assets\Explosion System\Demo\Script (for Demo)\ExplosionControl.cs" />
      <Compile Include="Assets\Model Assets\Explosion System\Scripts\GraphicExplosion.cs" />
      <Compile Include="Assets\Model Assets\Explosion System\Scripts\PhysicalExplosion.cs" />
@@ -206,9 +210,8 @@
      <Compile Include="Assets\OculusPlatform\Scripts\VoipPCMSourceNative.cs" />
      <Compile Include="Assets\OculusPlatform\Scripts\VoipSampleRate.cs" />
      <Compile Include="Assets\OculusPlatform\Scripts\WindowsPlatform.cs" />
-     <Compile Include="Assets\PlayerMotionImitator.cs" />
      <Compile Include="Assets\Resources\Movies\PlayVideo.cs" />
-     <Compile Include="Assets\SuperStretchManScript.cs" />
+     <Compile Include="Assets\VisibleAvatarScript.cs" />
      <None Include="Assets\OVR\Editor\AndroidManifest.OVRSubmission.xml" />
      <None Include="Assets\Model Assets\Explosion System\Shader\Exposion.shader" />
      <None Include="Assets\OVR\Shaders\OVRColorRampAlpha.shader" />
