@@ -7,21 +7,13 @@ public class InvisibleAvatarMotionImitator
 	GameObject visibleAvatar;
 	GameObject stretchingRightHand;
 	GameObject stretchingJoint;
+	GameObject translatedParentObject;
 
-	public InvisibleAvatarMotionImitator ()
+	public InvisibleAvatarMotionImitator (GameObject invisibleAvatar, GameObject visibleAvatar, GameObject translatedParentObject)
 	{
-		invisibleAvatar = GameObject.FindGameObjectWithTag ("Player");
-		visibleAvatar = GameObject.FindGameObjectWithTag("VisibleAvatar");
-		//stretchingRightHand = GameObject.FindGameObjectWithTag ("StretchingRightHand");
-		stretchingJoint = GameObject.FindGameObjectWithTag ("StretchingJoint");
-	}
-		
-	public void setInvisibleAvatar(GameObject avatar){
-		invisibleAvatar = avatar;
-	}
-
-	public void setVisibleAvatar(GameObject avatar){
-		visibleAvatar = avatar;
+		this.invisibleAvatar = invisibleAvatar;
+		this.visibleAvatar = visibleAvatar;
+		this.translatedParentObject = translatedParentObject;
 	}
 
 	public void Imitate()
@@ -52,8 +44,8 @@ public class InvisibleAvatarMotionImitator
 	}
 
 	bool MatchesTranslatedObjectName(string childName){
-		string translatedObjectName = stretchingJoint.transform.name;//stretchingRightHand.transform.name;
-		if (childName.Equals (translatedObjectName)) {
+		string translatedParentObjectName = translatedParentObject.transform.name;
+		if (childName.Equals (translatedParentObjectName)) {
 			return true;
 		}
 		return false;

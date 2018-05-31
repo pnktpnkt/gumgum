@@ -4971,7 +4971,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2146803993}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2fb054b5497921647846da547fa781c8, type: 3}
   m_Name: 
@@ -5115,3 +5115,15 @@ MonoBehaviour:
   rightWrist: {fileID: 1199436940}
   tempParentOfTarget: {fileID: 413813440}
   state: 0
+--- !u!114 &2146803998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2146803993}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86e380d26a808634ba079a006752ecfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vrik: {fileID: 2146803995}

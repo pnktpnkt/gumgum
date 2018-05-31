@@ -22,21 +22,6 @@ public class ArmStretchController
 		stretchPercentage = 0.01f;
 	}
 
-	// must
-	public void setStretchingObject(GameObject stretchingObject){
-
-	}
-
-	// must
-	public void setStretchVector(Vector3 stretchVector){
-
-	}
-
-	// for visibleAvatarScript class calculating stretchVector
-	public Vector3 getVectorFromPos1ToPos2(Vector3 pos1, Vector3 pos2){
-		return GetNormalizedStretchVector (pos2, pos1);
-	}
-
 	public void Stretch()
 	{
 		if (stretchCount < stretchMaxCount) {
