@@ -1,7 +1,19 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 using System.Collections;
 
+[System.Serializable]public class ArmStretchEvent: UnityEvent<Vector3, Vector3>{
+
+}
+
+[System.Serializable]public class ArmShrinkEvent: UnityEvent<Vector3, Vector3>{
+
+}
+
 public class VisibleAvatarScript : MonoBehaviour {
+	[SerializeField] ArmStretchEvent onStretchStart = new ArmStretchEvent();
+	[SerializeField] ArmShrinkEvent onShrinkStart = new ArmShrinkEvent();
+
 	private GameObject invisibleAvatar;
 	private StretchEventEmitterDebug superStretchManVRIKScript;
 	private InvisibleAvatarScript invisibleAvatarScript;

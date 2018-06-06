@@ -1,47 +1,16 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\InvisibleAvatarScript.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\VisibleAvatarScript.cs">
     <Files>
-      <File FileName="Assets\InvisibleAvatarScript.cs" Line="27" Column="2" />
-      <File FileName="Assets\Controller Scripts\StretchManScripts\StretchEventEmitter.cs" Line="128" Column="88" />
-      <File FileName="Assets\ArmStateReducer.cs" Line="12" Column="24" />
-      <File FileName="Assets\ArmState.cs" Line="8" Column="12" />
-      <File FileName="Assets\VisibleAvatarScript.cs" Line="15" Column="9" />
-      <File FileName="Assets\ArmStretchController.cs" Line="27" Column="3" />
-      <File FileName="Assets\Controller Scripts\StretchManScripts\StretchEventEmitterDebug.cs" Line="124" Column="5" />
-      <File FileName="Assets\Controller Scripts\StretchManScripts\RhandStretchController.cs" Line="1" Column="1" />
-      <File FileName="Assets\Controller Scripts\StretchManScripts\forearmRoller.cs" Line="17" Column="49" />
-      <File FileName="Assets\InvisibleAvatarMotionImitatoor.cs" Line="18" Column="3" />
+      <File FileName="Assets\InvisibleAvatarScript.cs" Line="1" Column="1" />
+      <File FileName="Assets\ArmStateReducer.cs" Line="1" Column="1" />
+      <File FileName="Assets\ArmState.cs" Line="1" Column="1" />
+      <File FileName="Assets\VisibleAvatarScript.cs" Line="15" Column="64" />
+      <File FileName="Assets\Controller Scripts\StretchManScripts\StretchEventEmitter.cs" Line="12" Column="68" />
+      <File FileName="Assets\ArmStretchController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Controller Scripts\MotorScripts\MotorController.cs" Line="1" Column="1" />
+      <File FileName="Assets\Controller Scripts\StretchManScripts\StretchManSound.cs" Line="1" Column="1" />
     </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State name="__root__">
-          <Node name="gumgum-master" expanded="True">
-            <Node name="Assembly-CSharp" expanded="True">
-              <Node name="Controller Scripts" expanded="True">
-                <Node name="MotorScripts" expanded="True" />
-                <Node name="StretchManScripts" expanded="True" />
-              </Node>
-              <Node name="InvisibleAvatarScript.cs" selected="True" />
-            </Node>
-            <Node name="Assembly-CSharp-firstpass" expanded="True">
-              <Node name="Plugins" expanded="True">
-                <Node name="RootMotion" expanded="True">
-                  <Node name="FinalIK" expanded="True">
-                    <Node name="IK Components" expanded="True" />
-                  </Node>
-                </Node>
-              </Node>
-            </Node>
-          </Node>
-        </State>
-      </Pad>
-      <Pad Id="MonoDevelop.NUnit.TestPad">
-        <State name="__root__">
-          <Node name="gumgum-master" expanded="True" selected="True" />
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
