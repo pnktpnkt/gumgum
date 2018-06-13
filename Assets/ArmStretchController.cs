@@ -13,8 +13,9 @@ public class ArmStretchController
 	int stretchMaxCount;
 	float stretchPercentage;
 
-    float stretchingMaxLength; // this value is the number of avatar's arm
-    float stretchingTotalTime; // this value is time for stretching avatar's arm
+    float stretchDegree = 5.0f; // this value is the number of avatar's arm
+    float stretchTotalTime = 2.0f; // this value is time for stretching avatar's arm
+	float stretchCurrentTime = 0f;
     float frameDeltaTime = Time.deltaTime;
 
 	public ArmStretchController ()
@@ -26,37 +27,46 @@ public class ArmStretchController
 		stretchPercentage = 0.01f;
 	}
 
-    public void setStretchingMaxLength(float number)
+    public void setStretchDegree(float degree)
     {
-        stretchingMaxLength = number;
+        stretchDegree = degree;
     }
 
-    public void setStretchingTotalTime(float totalTime)
+    public void setStretchTotalTime(float totalTime)
     {
-        stretchingTotalTime = totalTime;
+        stretchTotalTime = totalTime;
     }
 
-    public void StretchNew()
+    public void Stretch()
     {
-
-    }
-
-	public void Stretch()
-	{
-		if (stretchCount < stretchMaxCount) {
+		if (stretchCurrentTime < stretchTotalTime) {
 			ArmTranslate (GetStretchVector ());
-			stretchCount++;
+			stretchCurrentTime += frameDeltaTime;
+		} else if (stretchCurrentTime >= stretchTotalTime) {
+			stretchCurrentTime = stretchTotalTime;
 		}
-		Debug.Log (stretchCount);
-	}
+		//Debug.Log (stretchCurrentTime);
+    }
 
 	public void Shrink()
 	{
-		if (stretchCount > 0) {
+		if (stretchCurrentTime > 0f) {
 			ArmTranslate (-GetStretchVector ());
-			stretchCount--;
+			stretchCurrentTime -= frameDeltaTime;
+		} else if (stretchCurrentTime <= 0f) {
+			stretchCurrentTime = 0f;
 		}
-		Debug.Log (stretchCount);
+		//Debug.Log (stretchCurrentTime);
+	}
+
+	public Vector3 GetStretchVector()
+	{
+		Vector3 stretchTargetPos = GameObject.FindGameObjectWithTag ("StretchingRightHand").transform.position;
+		//Vector3 startPos = GameObject.FindGameObjectWithTag ("RightShoulder").transform.position;
+		Vector3 stretchStartPos = GameObject.FindGameObjectWithTag ("RightElbow").transform.position;
+		Vector3 armVector = stretchTargetPos - stretchStartPos;
+		Vector3 stretchVector = armVector*(stretchDegree - 1.0f) / (stretchTotalTime/frameDeltaTime);
+		return stretchVector;
 	}
 
 	public void ArmTranslate(Vector3 stretchVector)
@@ -66,21 +76,7 @@ public class ArmStretchController
 			stretchingJoint.transform.Translate (stretchVector, Space.World);
 		}
 		//Debug.Log (stretchingRightHand.ToString ());
-		stretchingRightHand.transform.Translate (stretchVector, Space.World);
-	}
-
-	// must move this method to visibleAvatarScript.cs
-	public Vector3 GetStretchVector()
-	{
-		Vector3 stretchingTargetPos = GameObject.FindGameObjectWithTag ("StretchingRightHand").transform.position;
-		//Vector3 startPos = GameObject.FindGameObjectWithTag ("RightShoulder").transform.position;
-		Vector3 startPos = GameObject.FindGameObjectWithTag ("RightElbow").transform.position;
-		return GetNormalizedStretchVector (stretchingTargetPos, startPos) * stretchPercentage;
-	}
-
-	public Vector3 GetNormalizedStretchVector(Vector3 stretchingTargetPos, Vector3 startPos)
-	{
-		return (stretchingTargetPos - startPos).normalized;
+		//stretchingRightHand.transform.Translate (stretchVector, Space.World);
 	}
 }
 

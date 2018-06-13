@@ -29,7 +29,7 @@ public class ArmStateReducer
 		updateMaxHandAccel (handAccel);
 		// gumgum pistol starts when max acceleration is over threshold and user's arm stretches out
 		if (headToHandDist > headToHandDistThreshold && maxHandAccel > accelerationThreshold) {
-			Debug.Log(maxHandAccel);
+			//Debug.Log(maxHandAccel);
 			maxHandAccel = 0.0f;
 			return ArmState.Stretching;
 		}

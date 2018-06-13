@@ -20,6 +20,7 @@ public class VisibleAvatarScript : MonoBehaviour {
 	private ArmStretchController armStretchController;
 	private InvisibleAvatarMotionImitator imitator;
 	private ArmState armState = ArmState.Idle;
+	private ArmState previousArmState = ArmState.Idle;
 	private ArmStateReducer armStateReducer;
 
 	// Use this for initialization
@@ -46,10 +47,11 @@ public class VisibleAvatarScript : MonoBehaviour {
 		// for ArmStateReducer
 		Vector3 handAccel = invisibleAvatarScript.getHandAccel ();
 		float headToHandDist = invisibleAvatarScript.getHeadToHandDist ();
-		Debug.Log ("handAccel : " + handAccel);
-		Debug.Log ("headToHandDist : " + headToHandDist);
+		//Debug.Log ("handAccel : " + handAccel);
+		//Debug.Log ("headToHandDist : " + headToHandDist);
+		previousArmState = armState;
 		armState = armStateReducer.getNewArmState (armState, handAccel, headToHandDist);
-		Debug.Log ("armState : " + armState);
+		//Debug.Log ("armState : " + armState);
 
 		//if (superStretchManVRIKScript.state == StretchEventEmitterDebug.State.Idle) {
 		if (armState == ArmState.Idle) {
@@ -61,8 +63,12 @@ public class VisibleAvatarScript : MonoBehaviour {
 		//if (superStretchManVRIKScript.state == StretchEventEmitterDebug.State.Stretching) {
 		if (armState == ArmState.Stretching) {
 			armStretchController.Stretch ();
+			if(previousArmState == ArmState.Idle || previousArmState == ArmState.Shrinking)
+				onStretchStart.Invoke (handAccel, handAccel);
 		} else if (armState == ArmState.Shrinking){//superStretchManVRIKScript.state == StretchEventEmitterDebug.State.Shrinking) {
 			armStretchController.Shrink ();
+			if(previousArmState == ArmState.Stretching)
+				onShrinkStart.Invoke (handAccel, handAccel);
 		}
 	}
 }
