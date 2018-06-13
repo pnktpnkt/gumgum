@@ -13,6 +13,10 @@ public class ArmStretchController
 	int stretchMaxCount;
 	float stretchPercentage;
 
+    float stretchingMaxLength; // this value is the number of avatar's arm
+    float stretchingTotalTime; // this value is time for stretching avatar's arm
+    float frameDeltaTime = Time.deltaTime;
+
 	public ArmStretchController ()
 	{
 		stretchingJoints = GameObject.FindGameObjectsWithTag ("StretchingJoint");
@@ -21,6 +25,21 @@ public class ArmStretchController
 		stretchMaxCount = 100;
 		stretchPercentage = 0.01f;
 	}
+
+    public void setStretchingMaxLength(float number)
+    {
+        stretchingMaxLength = number;
+    }
+
+    public void setStretchingTotalTime(float totalTime)
+    {
+        stretchingTotalTime = totalTime;
+    }
+
+    public void StretchNew()
+    {
+
+    }
 
 	public void Stretch()
 	{
