@@ -79,7 +79,7 @@ class SerialHandler
 	public void Write(string message)
 	{
 		try {
-//			Debug.Log(message);
+			Debug.Log(message);
 			serialPort_.Write(message);
 		} catch (System.Exception e) {
 			//Debug.LogWarning(e.Message);

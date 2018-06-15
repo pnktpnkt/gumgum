@@ -3524,6 +3524,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   standard_speed: 5
+  mechanismMode: 0
 --- !u!4 &1456879667
 Transform:
   m_ObjectHideFlags: 0

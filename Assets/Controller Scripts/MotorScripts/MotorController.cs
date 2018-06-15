@@ -26,6 +26,8 @@ class MotorController: MonoBehaviour
 
 	private string sendGravityData;
 
+	public int mechanismMode = 0;// 0:both, 1:no skin stretch, 2:no gravity moving
+
 	void Start(){
 
 		try{
@@ -106,16 +108,22 @@ class MotorController: MonoBehaviour
 		mag = mag < -256f ? -256f : mag;
 
 
-
-		sendGravityData = makeSendGravityData(mag);
-
-		string sendStretchData;
-		if (mag > 0) {
-			sendStretchData = makeSendStretchData (mag);
+		if (mechanismMode == 2) {
+			sendGravityData = makeSendGravityData (0);
 		} else {
-			sendStretchData = makeSendStretchData (-mag);
+			sendGravityData = makeSendGravityData (mag);
 		}
 
+		string sendStretchData;
+		if (mechanismMode == 1) {
+			sendStretchData = makeSendStretchData (0);
+		} else {
+			if (mag > 0) {
+				sendStretchData = makeSendStretchData (mag);
+			} else {
+				sendStretchData = makeSendStretchData (-mag);
+			}
+		}
 
 		stretchTimer.Dispose ();
 		gravityTimer.Dispose ();
@@ -169,7 +177,11 @@ class MotorController: MonoBehaviour
 		serialHandler.Write("0600");
 
 		if (stretchEndFlag == true) {
-			serialHandler.Write ("1255");
+			if (mechanismMode == 1) {
+				serialHandler.Write ("1000");
+			} else {
+				serialHandler.Write ("1255");
+			}
 		} else {
 			serialHandler.Write ("1700");
 		}
