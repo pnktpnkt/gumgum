@@ -15,13 +15,13 @@ public class InvisibleAvatarScript : MonoBehaviour
 		headTarget = vrik.solver.spine.headTarget.transform;
 		rightHandTarget = vrik.solver.rightArm.target.transform;
 		headToHandDist = (rightHandTarget.position - headTarget.position).sqrMagnitude;
-		handAccel = OVRInput.GetLocalControllerAcceleration (OVRInput.Controller.LTouch);
+		handAccel = OVRInput.GetLocalControllerAcceleration (OVRInput.Controller.RTouch);
 	}
 
 	// Update is called once per frame
 	void Update () {
 		headToHandDist = (rightHandTarget.position - headTarget.position).sqrMagnitude;
-		handAccel = OVRInput.GetLocalControllerAcceleration (OVRInput.Controller.LTouch);
+		handAccel = OVRInput.GetLocalControllerAcceleration (OVRInput.Controller.RTouch);
 	}
 
 	public Vector3 getHandAccel(){

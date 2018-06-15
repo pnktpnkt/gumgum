@@ -8,23 +8,18 @@ public class ArmStretchController
 	private GameObject[] stretchingJoints;
 	private GameObject stretchingRightHand;
 
-	// parameter for arm stretching
-	int stretchCount;
-	int stretchMaxCount;
-	float stretchPercentage;
-
-    float stretchDegree = 5.0f; // this value is the number of avatar's arm
-    float stretchTotalTime = 2.0f; // this value is time for stretching avatar's arm
+    float stretchDegree = 5.0f; // this value is the number of avatar's forearm
+    float stretchTotalTime = 1.0f; // this value is time for stretching avatar's arm
 	float stretchCurrentTime = 0f;
     float frameDeltaTime = Time.deltaTime;
+	Vector3 stretchVector;
 
-	public ArmStretchController ()
+	public ArmStretchController (float degree, float totalTime)
 	{
 		stretchingJoints = GameObject.FindGameObjectsWithTag ("StretchingJoint");
 		stretchingRightHand = GameObject.FindGameObjectWithTag ("StretchingRightHand");
-		stretchCount = 0;
-		stretchMaxCount = 100;
-		stretchPercentage = 0.01f;
+		stretchDegree = degree;
+		stretchTotalTime = totalTime;
 	}
 
     public void setStretchDegree(float degree)
@@ -40,7 +35,7 @@ public class ArmStretchController
     public void Stretch()
     {
 		if (stretchCurrentTime < stretchTotalTime) {
-			ArmTranslate (GetStretchVector ());
+			ArmTranslate (GetStretchVector());
 			stretchCurrentTime += frameDeltaTime;
 		} else if (stretchCurrentTime >= stretchTotalTime) {
 			stretchCurrentTime = stretchTotalTime;
@@ -51,7 +46,7 @@ public class ArmStretchController
 	public void Shrink()
 	{
 		if (stretchCurrentTime > 0f) {
-			ArmTranslate (-GetStretchVector ());
+			ArmTranslate (-GetStretchVector());
 			stretchCurrentTime -= frameDeltaTime;
 		} else if (stretchCurrentTime <= 0f) {
 			stretchCurrentTime = 0f;
@@ -61,7 +56,7 @@ public class ArmStretchController
 
 	public Vector3 GetStretchVector()
 	{
-		Vector3 stretchTargetPos = GameObject.FindGameObjectWithTag ("StretchingRightHand").transform.position;
+		Vector3 stretchTargetPos = GameObject.FindGameObjectWithTag ("RightHand").transform.position;
 		//Vector3 startPos = GameObject.FindGameObjectWithTag ("RightShoulder").transform.position;
 		Vector3 stretchStartPos = GameObject.FindGameObjectWithTag ("RightElbow").transform.position;
 		Vector3 armVector = stretchTargetPos - stretchStartPos;

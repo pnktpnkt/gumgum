@@ -46,7 +46,7 @@ public class ArmStateReducer
 	public ArmState getNewStateFromShrinkingState(Vector3 handAccel, float headToHandDist){
 		updateMaxHandAccel (handAccel);
 		if (headToHandDist > headToHandDistThreshold && maxHandAccel > accelerationThreshold) {
-			Debug.Log (maxHandAccel);
+			//Debug.Log (maxHandAccel);
 			maxHandAccel = 0.0f;
 			return ArmState.Stretching;
 		}

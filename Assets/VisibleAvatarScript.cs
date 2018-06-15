@@ -14,6 +14,9 @@ public class VisibleAvatarScript : MonoBehaviour {
 	[SerializeField] ArmStretchEvent onStretchStart = new ArmStretchEvent();
 	[SerializeField] ArmShrinkEvent onShrinkStart = new ArmShrinkEvent();
 
+	public float stretchDegree;
+	public float stretchTotalTime;
+
 	private GameObject invisibleAvatar;
 	private StretchEventEmitterDebug superStretchManVRIKScript;
 	private InvisibleAvatarScript invisibleAvatarScript;
@@ -30,7 +33,7 @@ public class VisibleAvatarScript : MonoBehaviour {
 		invisibleAvatarScript = invisibleAvatar.GetComponent<InvisibleAvatarScript> ();
 
 		//must
-		armStretchController = new ArmStretchController ();
+		armStretchController = new ArmStretchController (stretchDegree, stretchTotalTime);
 
 		// setup InvisibleAvatarMotionImitator
 		GameObject visibleAvatar = GameObject.FindGameObjectWithTag ("VisibleAvatar");
