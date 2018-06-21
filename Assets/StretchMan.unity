@@ -3494,8 +3494,8 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: ArmShrinkEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-  stretchDegree: 20
-  stretchTotalTime: 1
+  stretchDegree: 100
+  stretchTotalTime: 0.9
 --- !u!1 &1456879665
 GameObject:
   m_ObjectHideFlags: 0
@@ -4857,7 +4857,7 @@ MonoBehaviour:
       palmToThumbAxis: {x: 0, y: 0, z: 1}
     rightArm:
       bones: []
-      target: {fileID: 1686068528}
+      target: {fileID: 840761399}
       bendGoal: {fileID: 0}
       positionWeight: 1
       rotationWeight: 1
@@ -5273,3 +5273,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vrik: {fileID: 2146803995}
+  leftController: 1
