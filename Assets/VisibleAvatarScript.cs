@@ -38,7 +38,8 @@ public class VisibleAvatarScript : MonoBehaviour {
 		// setup InvisibleAvatarMotionImitator
 		GameObject visibleAvatar = GameObject.FindGameObjectWithTag ("VisibleAvatar");
 		GameObject translatedParentObject = GameObject.FindGameObjectWithTag ("StretchingJoint");
-		imitator = new InvisibleAvatarMotionImitator (invisibleAvatar, visibleAvatar, translatedParentObject);
+        GameObject attackingObject = GameObject.FindGameObjectWithTag("AttackingObject");
+		imitator = new InvisibleAvatarMotionImitator (invisibleAvatar, visibleAvatar, translatedParentObject, attackingObject);
 		imitator.Imitate ();
 
 		// setup ArmStateReducer
@@ -54,21 +55,19 @@ public class VisibleAvatarScript : MonoBehaviour {
 		//Debug.Log ("headToHandDist : " + headToHandDist);
 		previousArmState = armState;
 		armState = armStateReducer.getNewArmState (armState, handAccel, headToHandDist);
-		//Debug.Log ("armState : " + armState);
+        //Debug.Log ("armState : " + armState);
 
-		//if (superStretchManVRIKScript.state == StretchEventEmitterDebug.State.Idle) {
-		if (armState == ArmState.Idle) {
+        if (armState == ArmState.Idle) {
 			imitator.Imitate ();
 		} else {
-			imitator.ImitateExceptHandPosition ();
-		}
+			imitator.ImitateWhileArmStretching ();
+        }
 
-		//if (superStretchManVRIKScript.state == StretchEventEmitterDebug.State.Stretching) {
 		if (armState == ArmState.Stretching) {
 			armStretchController.Stretch ();
 			if(previousArmState == ArmState.Idle || previousArmState == ArmState.Shrinking)
 				onStretchStart.Invoke (handAccel, handAccel);
-		} else if (armState == ArmState.Shrinking){//superStretchManVRIKScript.state == StretchEventEmitterDebug.State.Shrinking) {
+		} else if (armState == ArmState.Shrinking) {
 			armStretchController.Shrink ();
 			if(previousArmState == ArmState.Stretching)
 				onShrinkStart.Invoke (handAccel, handAccel);

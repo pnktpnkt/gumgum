@@ -21,6 +21,7 @@ TagManager:
   - RightElbow
   - RightShoulder
   - VisibleAvatar
+  - AttackingObject
   layers:
   - Default
   - TransparentFX

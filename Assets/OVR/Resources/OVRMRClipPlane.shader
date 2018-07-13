@@ -1,4 +1,6 @@
-﻿Shader "Unlit/OVRMRClipPlane"
+﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
+Shader "Unlit/OVRMRClipPlane"
 {
 	Properties
 	{
@@ -37,7 +39,7 @@
 #if UNITY_VERSION >= 540
 				o.vertex = UnityObjectToClipPos(v.vertex);
 #else
-				o.vertex = mul(UNITY_MATRIX_MVP, v.vertex);
+				o.vertex = UnityObjectToClipPos(v.vertex);
 #endif
 				o.vertex *= _Visible;
 				return o;

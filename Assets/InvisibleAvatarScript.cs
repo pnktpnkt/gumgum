@@ -9,6 +9,8 @@ public class InvisibleAvatarScript : MonoBehaviour
 	private Transform rightHandTarget;
 	private Vector3 handAccel;
 	private float headToHandDist;
+    private float maxHeadToHandDist;
+    private Vector3 maxHeadTargetPosition;
 	public bool leftController = false;
 
 	// Use this for initialization
@@ -31,7 +33,19 @@ public class InvisibleAvatarScript : MonoBehaviour
 		} else {
 			handAccel = OVRInput.GetLocalControllerAcceleration (OVRInput.Controller.LTouch);
 		}
-	}
+        
+        if (OVRInput.GetDown(OVRInput.RawButton.A)) {
+            Debug.Log("A button is pushed");
+            maxHeadToHandDist = headToHandDist;
+            Debug.Log(maxHeadToHandDist);
+        }
+        if (OVRInput.GetDown(OVRInput.RawButton.B)) {
+            Debug.Log("B button is pushed");
+            maxHeadTargetPosition = headTarget.position;
+            Debug.Log(maxHeadTargetPosition);
+        }
+        
+    }
 
 	public Vector3 getHandAccel(){
 		return handAccel;

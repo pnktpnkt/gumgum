@@ -7,6 +7,7 @@ public class ArmStretchController
 	// Targets to stretch
 	private GameObject[] stretchingJoints;
 	private GameObject stretchingRightHand;
+    private float armLength;
 
     float stretchDegree = 5.0f; // this value is the number of avatar's forearm
     float stretchTotalTime = 1.0f; // this value is time for stretching avatar's arm
@@ -15,12 +16,17 @@ public class ArmStretchController
 	Vector3 stretchVector;
 
 	public ArmStretchController (float degree, float totalTime)
-	{
+    {
 		stretchingJoints = GameObject.FindGameObjectsWithTag ("StretchingJoint");
 		stretchingRightHand = GameObject.FindGameObjectWithTag ("StretchingRightHand");
 		stretchDegree = degree;
 		stretchTotalTime = totalTime;
-	}
+
+        Vector3 stretchTargetPos = GameObject.FindGameObjectWithTag("RightHand").transform.position;
+        //Vector3 startPos = GameObject.FindGameObjectWithTag ("RightShoulder").transform.position;
+        Vector3 stretchStartPos = GameObject.FindGameObjectWithTag("RightElbow").transform.position;
+        armLength = (stretchTargetPos - stretchStartPos).magnitude;
+    }
 
     public void setStretchDegree(float degree)
     {
@@ -35,7 +41,7 @@ public class ArmStretchController
     public void Stretch()
     {
 		if (stretchCurrentTime < stretchTotalTime) {
-			ArmTranslate (GetStretchVector());
+            ArmTranslate(deltaStretchLength());
 			stretchCurrentTime += frameDeltaTime;
 		} else if (stretchCurrentTime >= stretchTotalTime) {
 			stretchCurrentTime = stretchTotalTime;
@@ -46,7 +52,7 @@ public class ArmStretchController
 	public void Shrink()
 	{
 		if (stretchCurrentTime > 0f) {
-			ArmTranslate (-GetStretchVector());
+            ArmTranslate(-deltaStretchLength());
 			stretchCurrentTime -= frameDeltaTime;
 		} else if (stretchCurrentTime <= 0f) {
 			stretchCurrentTime = 0f;
@@ -54,25 +60,15 @@ public class ArmStretchController
 		//Debug.Log (stretchCurrentTime);
 	}
 
-	public Vector3 GetStretchVector()
-	{
-		Vector3 stretchTargetPos = GameObject.FindGameObjectWithTag ("RightHand").transform.position;
-		//Vector3 startPos = GameObject.FindGameObjectWithTag ("RightShoulder").transform.position;
-		Vector3 stretchStartPos = GameObject.FindGameObjectWithTag ("RightElbow").transform.position;
-		Vector3 armVector = stretchTargetPos - stretchStartPos;
-		Vector3 stretchVector = armVector*(stretchDegree - 1.0f) / (stretchTotalTime/frameDeltaTime);
-		return stretchVector;
-	}
+    public float deltaStretchLength() {
+        return armLength*(stretchDegree-1.0f) / (stretchTotalTime/frameDeltaTime);
+    }
 
-	public void ArmTranslate(Vector3 stretchVector)
-	{
-		foreach (GameObject stretchingJoint in stretchingJoints) {
-			//Debug.Log (stretchingJoint.ToString ());
-			stretchingJoint.transform.Translate (stretchVector, Space.World);
-		}
-		//Debug.Log (stretchingRightHand.ToString ());
-		//stretchingRightHand.transform.Translate (stretchVector, Space.World);
-	}
+    public void ArmTranslate(float deltaStretchLength) {
+        foreach (GameObject stretchingJoint in stretchingJoints) {
+            stretchingJoint.transform.Translate(new Vector3(0, deltaStretchLength, 0));
+        }
+    }
 }
 
 

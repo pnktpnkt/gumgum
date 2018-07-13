@@ -18,7 +18,7 @@ class MotorController: MonoBehaviour
 	private System.Timers.Timer stopTimer;
 	private System.Timers.Timer gravityTimer;
 
-	private Stopwatch stopwatch;
+	private Stopwatch stopwatch; // don't send data when sending interval < this.interval
 	private int interval = 100; //ms
 
 	private bool stretchDirectionFlag = true;
@@ -26,7 +26,7 @@ class MotorController: MonoBehaviour
 
 	private string sendGravityData;
 
-	public int mechanismMode = 0;// 0:both, 1:no skin stretch, 2:no gravity moving
+	public int mechanismMode = 0;// 0:both, 1:only gravity moving, 2:only skin stretch
 
 	void Start(){
 
@@ -78,7 +78,8 @@ class MotorController: MonoBehaviour
 
 	public void onShrinkStart(){
 		UnityEngine.Debug.Log ("shrink start in MotorController");
-		SendVelocityMagnitude (-255);}
+		SendVelocityMagnitude (-255);
+	}
 
 	public void onShrinkEnd(){
 
@@ -155,7 +156,7 @@ class MotorController: MonoBehaviour
 	}
 
 	void stretchInterval(object sender, EventArgs e){
-
+		
 		if (stretchDirectionFlag == true) {
 			serialHandler.Write ("1511");
 			stretchTimer.Interval = 50;
@@ -210,16 +211,17 @@ class MotorController: MonoBehaviour
 
 		n = (int)speed;
 
+		// process for opposite rotation
 		if (n < 0)
 		{
 			n = -n;
 			n += 256;
 		}
 
+		// process for number of digits of n
 		if (n % 10 == n) {
 			sendData = "000" + n;
 		}
-		//nが二桁だったとき
 		else if (n % 100 == n) {
 			sendData = "00" + n;
 		} else if (n % 1000 == n) {

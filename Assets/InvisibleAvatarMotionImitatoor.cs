@@ -7,13 +7,21 @@ public class InvisibleAvatarMotionImitator
 	GameObject visibleAvatar;
 	GameObject stretchingRightHand;
 	GameObject stretchingJoint;
-	GameObject translatedParentObject;
+	GameObject stretchingObject;
+    GameObject attackingObject;
 
-	public InvisibleAvatarMotionImitator (GameObject invisibleAvatar, GameObject visibleAvatar, GameObject translatedParentObject)
+    public InvisibleAvatarMotionImitator(GameObject invisibleAvatar, GameObject visibleAvatar, GameObject stretchingObject) {
+        this.invisibleAvatar = invisibleAvatar;
+        this.visibleAvatar = visibleAvatar;
+        this.stretchingObject = stretchingObject;
+    }
+
+    public InvisibleAvatarMotionImitator (GameObject invisibleAvatar, GameObject visibleAvatar, GameObject stretchingObject, GameObject attackingObject)
 	{
 		this.invisibleAvatar = invisibleAvatar;
 		this.visibleAvatar = visibleAvatar;
-		this.translatedParentObject = translatedParentObject;
+		this.stretchingObject = stretchingObject;
+        this.attackingObject = attackingObject;
 	}
 
 	public void Imitate()
@@ -21,12 +29,12 @@ public class InvisibleAvatarMotionImitator
 		CopyObjectPositions (false);
 	}
 
-	public void ImitateExceptHandPosition()
+	public void ImitateWhileArmStretching()
 	{
 		CopyObjectPositions (true);
 	}
 
-	void CopyObjectPositions(bool isArmTranslated)
+	void CopyObjectPositions(bool isArmStretching)
 	{
 		Transform[] invisibleAvatarChildTransforms = invisibleAvatar.GetComponentsInChildren<Transform> ();
 		Transform[] visibleAvatarChildTransforms = visibleAvatar.GetComponentsInChildren<Transform> ();
@@ -34,22 +42,32 @@ public class InvisibleAvatarMotionImitator
 		bool isPositionCopied = true;
 
 		foreach (Transform child in visibleAvatarChildTransforms) {
-			if (isArmTranslated && MatchesTranslatedObjectName (child.name))
-				isPositionCopied = false;
-			if (isPositionCopied)
-				child.position = invisibleAvatarChildTransforms[count].position;
-			child.rotation = invisibleAvatarChildTransforms [count].rotation;
-			count++;
+            if (!MatchesAttackingObjectName(child.name)) {
+                if (isArmStretching && MatchesStretchingObjectName(child.name))
+                    isPositionCopied = false;
+                if (isPositionCopied)
+                    child.position = invisibleAvatarChildTransforms[count].position;
+                child.rotation = invisibleAvatarChildTransforms[count].rotation;
+                count++;
+            }
 		}
 	}
 
-	bool MatchesTranslatedObjectName(string childName){
-		string translatedParentObjectName = translatedParentObject.transform.name;
-		if (childName.Equals (translatedParentObjectName)) {
+	bool MatchesStretchingObjectName(string name){
+		string stretchingObjectName = stretchingObject.transform.name;
+		if (name.Equals (stretchingObjectName)) {
 			return true;
 		}
 		return false;
 	}
+
+    bool MatchesAttackingObjectName(String name) {
+        string attackingObjectName = attackingObject.transform.name;
+        if (name.Equals(attackingObjectName)) {
+            return true;
+        }
+        return false;
+    }
 }
 
 
