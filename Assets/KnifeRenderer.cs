@@ -7,7 +7,7 @@ public class KnifeRenderer : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         MeshRenderer meshrenderer = GetComponent<MeshRenderer>();
-        //meshrenderer.enabled = false;
+        meshrenderer.enabled = false;
 	}
 	
 	// Update is called once per frame
