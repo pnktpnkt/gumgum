@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class KnifeController : MonoBehaviour {
     private GameObject[] stretchingJoints;
-    private Vector3 localVector = new Vector3(-0.2f, 0.2f, 0f);
+    private Vector3 localVector = new Vector3(-0.3f, 0f, 0f);
     private Vector3 tempVector;
     private Quaternion tempRotation;
     bool attackStart = false;
