@@ -22,6 +22,7 @@ TagManager:
   - RightShoulder
   - VisibleAvatar
   - AttackingObject
+  - InvisibleRightShoulder
   layers:
   - Default
   - TransparentFX

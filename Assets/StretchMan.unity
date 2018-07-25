@@ -213,6 +213,10 @@ Prefab:
       propertyPath: m_LocalPosition.y
       value: 0.13
       objectReference: {fileID: 0}
+    - target: {fileID: 400012, guid: 8cd032619f919c1439f9cdc58246d32e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8cd032619f919c1439f9cdc58246d32e, type: 3}
   m_IsPrefabParent: 0
@@ -632,9 +636,17 @@ Prefab:
       propertyPath: m_LocalPosition.y
       value: 0.13
       objectReference: {fileID: 0}
+    - target: {fileID: 100090, guid: 8cd032619f919c1439f9cdc58246d32e, type: 3}
+      propertyPath: m_TagString
+      value: InvisibleRightShoulder
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8cd032619f919c1439f9cdc58246d32e, type: 3}
   m_IsPrefabParent: 0
+--- !u!4 &190509470 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 400020, guid: 8cd032619f919c1439f9cdc58246d32e, type: 3}
+  m_PrefabInternal: {fileID: 190509469}
 --- !u!4 &194997281 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400060, guid: cb277b2073cd328448389b85db081d23, type: 3}
@@ -2693,6 +2705,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6baa76851ccf50c4c81547d5f7186564, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &1068852589 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 400010, guid: 8cd032619f919c1439f9cdc58246d32e, type: 3}
+  m_PrefabInternal: {fileID: 190509469}
 --- !u!1 &1073941101 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100046, guid: 8cd032619f919c1439f9cdc58246d32e, type: 3}
@@ -5785,3 +5801,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vrik: {fileID: 2146803995}
   leftController: 0
+  invisibleAvatar: {fileID: 2146803994}
+  shoulder_right: {fileID: 1068852589}
+  upperarm: {fileID: 905265535}
+  forearm: {fileID: 190509470}

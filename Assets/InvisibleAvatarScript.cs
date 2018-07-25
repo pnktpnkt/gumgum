@@ -13,6 +13,12 @@ public class InvisibleAvatarScript : MonoBehaviour
     private Vector3 maxHeadTargetPosition;
 	public bool leftController = false;
 
+    private AvatarCalibrator avatarCalibrator;
+    public Transform invisibleAvatar;
+    public Transform shoulder_right;
+    public Transform upperarm;
+    public Transform forearm;
+
 	// Use this for initialization
 	void Start () {
 		headTarget = vrik.solver.spine.headTarget.transform;
@@ -23,6 +29,7 @@ public class InvisibleAvatarScript : MonoBehaviour
 		} else {
 			handAccel = OVRInput.GetLocalControllerAcceleration (OVRInput.Controller.LTouch);
 		}
+        avatarCalibrator = new AvatarCalibrator(invisibleAvatar, shoulder_right, upperarm, forearm);
 	}
 
 	// Update is called once per frame
@@ -44,7 +51,16 @@ public class InvisibleAvatarScript : MonoBehaviour
             maxHeadTargetPosition = headTarget.position;
             Debug.Log(maxHeadTargetPosition);
         }
-        
+
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            Vector3 headPos = headTarget.position;
+            Vector3 handPos = rightHandTarget.position;
+            avatarCalibrator.calibrateAvatarPosition(headPos);
+            avatarCalibrator.calibrateAvatarScale(headPos);
+            avatarCalibrator.calibrateShoulderPosition(headPos, handPos);
+            avatarCalibrator.calibrateArmLength(headPos, handPos);
+        }
     }
 
 	public Vector3 getHandAccel(){
