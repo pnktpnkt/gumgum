@@ -217,6 +217,18 @@ Prefab:
       propertyPath: m_LocalScale.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 400058, guid: 8cd032619f919c1439f9cdc58246d32e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.93
+      objectReference: {fileID: 0}
+    - target: {fileID: 400058, guid: 8cd032619f919c1439f9cdc58246d32e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.93
+      objectReference: {fileID: 0}
+    - target: {fileID: 400058, guid: 8cd032619f919c1439f9cdc58246d32e, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.93
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8cd032619f919c1439f9cdc58246d32e, type: 3}
   m_IsPrefabParent: 0
@@ -622,7 +634,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 13700000, guid: 8cd032619f919c1439f9cdc58246d32e, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400010, guid: 8cd032619f919c1439f9cdc58246d32e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -639,6 +651,26 @@ Prefab:
     - target: {fileID: 100090, guid: 8cd032619f919c1439f9cdc58246d32e, type: 3}
       propertyPath: m_TagString
       value: InvisibleRightShoulder
+      objectReference: {fileID: 0}
+    - target: {fileID: 400058, guid: 8cd032619f919c1439f9cdc58246d32e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.93
+      objectReference: {fileID: 0}
+    - target: {fileID: 400058, guid: 8cd032619f919c1439f9cdc58246d32e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.93
+      objectReference: {fileID: 0}
+    - target: {fileID: 400058, guid: 8cd032619f919c1439f9cdc58246d32e, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.93
+      objectReference: {fileID: 0}
+    - target: {fileID: 400016, guid: 8cd032619f919c1439f9cdc58246d32e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 400020, guid: 8cd032619f919c1439f9cdc58246d32e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.22
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8cd032619f919c1439f9cdc58246d32e, type: 3}
@@ -4446,7 +4478,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1686068527}
   m_LocalRotation: {x: 0, y: -0.7071068, z: -0.7071068, w: 0}
-  m_LocalPosition: {x: -0, y: 0, z: -0.09999999}
+  m_LocalPosition: {x: -0, y: 0, z: -0.09}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 962434043}
@@ -5115,7 +5147,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2046488354}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.054, y: -0.07827437, z: -0.133}
+  m_LocalPosition: {x: -0, y: -0.07827437, z: -0.08}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 373913289}
@@ -5318,7 +5350,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2146803993}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bfac4fa329d1f4f23814af71a247c14b, type: 3}
   m_Name: 
@@ -5335,8 +5367,8 @@ MonoBehaviour:
     leftUpperArm: {fileID: 1406508075}
     leftForearm: {fileID: 328686603}
     leftHand: {fileID: 1576057095}
-    rightShoulder: {fileID: 1563176168}
-    rightUpperArm: {fileID: 905265535}
+    rightShoulder: {fileID: 1068852589}
+    rightUpperArm: {fileID: 1563176168}
     rightForearm: {fileID: 1428215248}
     rightHand: {fileID: 1199436941}
     leftThigh: {fileID: 1048730831}
@@ -5351,7 +5383,7 @@ MonoBehaviour:
     IKPosition: {x: 0, y: 0, z: 0}
     IKPositionWeight: 1
     root: {fileID: 0}
-    plantFeet: 1
+    plantFeet: 0
     spine:
       bones: []
       headTarget: {fileID: 2046488355}
@@ -5389,7 +5421,7 @@ MonoBehaviour:
       positionWeight: 1
       rotationWeight: 1
       shoulderRotationMode: 0
-      shoulderRotationWeight: 1
+      shoulderRotationWeight: 0.1
       bendGoalWeight: 0.5
       swivelOffset: 32
       wristToPalmAxis: {x: 0, y: 1, z: 0}

@@ -7,10 +7,10 @@ public class AvatarCalibrator
     Transform shoulder;
     Transform upperarm;
     Transform forearm;
-    Vector3 preAvatarScale;
 
-    Vector3 headPosRef;
-    Vector3 handPosRef;
+    Vector3 headPosRef = new Vector3(-0.1f, 1.5f, -10.5f);
+    Vector3 handPosRef = new Vector3(0.1f, 1.3f, -9.9f);
+    Vector3 avatarScaleRef;
 
 	public AvatarCalibrator(Transform avatarTransform, Transform shoulder, Transform upperarm, Transform forearm)
 	{
@@ -18,19 +18,21 @@ public class AvatarCalibrator
         this.shoulder = shoulder;
         this.upperarm = upperarm;
         this.forearm = forearm;
-        Vector3 preInvisibleAvatarScale = avatarTransform.localScale;
+        avatarScaleRef = avatarTransform.localScale;
 	}
 
     public void calibrateAvatarPosition(Vector3 headPos)
     {
         Vector3 newAvatarPos = new Vector3(headPos.x, 0, headPos.z);
         avatarTransform.position = newAvatarPos;
+        //Debug.Log(avatarTransform.position);
     }
 
     public void calibrateAvatarScale(Vector3 headPos)
     {
         float scale = headPos.y / headPosRef.y;
-        avatarTransform.localScale = new Vector3(1f, scale, 1f);
+        avatarTransform.localScale = new Vector3(avatarScaleRef.x, avatarScaleRef.y*scale, avatarScaleRef.z);
+        //Debug.Log(avatarTransform.localScale);
     }
 
     public void calibrateShoulderPosition(Vector3 headPos, Vector3 handPos)
@@ -48,7 +50,9 @@ public class AvatarCalibrator
         float armLengthRef = handPosRef.z - headPosRef.z;
         float armLengthDiff = armLength - armLengthRef;
 
-        upperarm.Translate(new Vector3(0, armLengthDiff / 2, 0));
-        forearm.Translate(new Vector3(0, armLengthDiff / 2, 0));
+        Debug.Log(armLengthDiff);
+
+        upperarm.Translate(new Vector3(0, armLengthDiff / 4, 0));
+        forearm.Translate(new Vector3(0, armLengthDiff / 4, 0));
     }
 }
