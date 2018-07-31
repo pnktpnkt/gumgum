@@ -18,7 +18,8 @@ public class InvisibleAvatarScript : MonoBehaviour
     public Transform shoulder_right;
     public Transform upperarm;
     public Transform forearm;
-    private bool secondCalibration;
+    private bool firstCalibration = true;
+    private bool secondCalibration = false;
 
 	// Use this for initialization
 	void Start () {
@@ -68,22 +69,31 @@ public class InvisibleAvatarScript : MonoBehaviour
             //Debug.Log(rightHandTarget.position);
         }
 
+       
         if (Input.GetKeyDown(KeyCode.C) || OVRInput.GetDown(OVRInput.RawButton.A))
         {
-            avatarCalibrator.calibrateAvatarPosition(headPos);
-            avatarCalibrator.calibrateAvatarScale(headPos);
-        }
-
-        if(Input.GetKeyDown(KeyCode.V) || OVRInput.GetDown(OVRInput.RawButton.B)) {
-            if (secondCalibration) {
+            if (firstCalibration) { // calibratioin for position and scale of avatar
+                avatarCalibrator.calibrateAvatarPosition(headPos);
+                avatarCalibrator.calibrateAvatarScale(headPos);
+            }else if (!firstCalibration && !secondCalibration) {
                 if (!vrik.enabled) {
                     vrik.enabled = true;
-                } else {
-                    avatarCalibrator.calibrateShoulderPosition(headPos, handPos);
-                    avatarCalibrator.calibrateArmLength(headPos, handPos);
                 }
+                secondCalibration = true;
+            }else if (secondCalibration) { // calibratioin for shoulder position and arm length of avatar
+                avatarCalibrator.calibrateShoulderPosition(headPos, handPos);
+                avatarCalibrator.calibrateArmLength(headPos, handPos);
             }
-            secondCalibration = true;
+           
+        }
+
+        if (Input.GetKeyDown(KeyCode.V) || OVRInput.GetDown(OVRInput.RawButton.B)) {
+            if (firstCalibration) {
+                firstCalibration = false;
+            }
+            if (secondCalibration) {
+                secondCalibration = false;
+            }
         }
     }
 
