@@ -18,6 +18,7 @@ public class InvisibleAvatarScript : MonoBehaviour
     public Transform shoulder_right;
     public Transform upperarm;
     public Transform forearm;
+    public Transform hand_right;
     private bool firstCalibration = true;
     private bool secondCalibration = false;
 
@@ -31,7 +32,7 @@ public class InvisibleAvatarScript : MonoBehaviour
 		} else {
 			handAccel = OVRInput.GetLocalControllerAcceleration (OVRInput.Controller.LTouch);
 		}
-        avatarCalibrator = new AvatarCalibrator(invisibleAvatar, shoulder_right, upperarm, forearm);
+        avatarCalibrator = new AvatarCalibrator(invisibleAvatar, shoulder_right, upperarm, forearm, hand_right);
         vrik.enabled = false;
         GameObject rightWrist = GameObject.FindGameObjectWithTag("RightHand");
         GameObject rightShoulder = GameObject.FindGameObjectWithTag("InvisibleRightShoulder");
@@ -80,7 +81,7 @@ public class InvisibleAvatarScript : MonoBehaviour
                     vrik.enabled = true;
                 }
                 secondCalibration = true;
-            }else if (secondCalibration) { // calibratioin for shoulder position and arm length of avatar
+            }else if (secondCalibration && avatarCalibrator.isArmParallel()) { // calibratioin for shoulder position and arm length of avatar
                 avatarCalibrator.calibrateShoulderPosition(headPos, handPos);
                 avatarCalibrator.calibrateArmLength(headPos, handPos);
             }
