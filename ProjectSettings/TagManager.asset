@@ -23,6 +23,7 @@ TagManager:
   - VisibleAvatar
   - AttackingObject
   - InvisibleRightShoulder
+  - RealHand
   layers:
   - Default
   - TransparentFX

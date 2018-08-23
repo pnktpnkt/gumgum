@@ -8,10 +8,11 @@ public class AvatarCalibrator
     Transform upperarm;
     Transform forearm;
     Transform hand;
+    Transform touchTransform;
 
     Vector3 headPosRef = new Vector3(-0.1f, 1.5f, -10.5f);
     Vector3 handPosRef = new Vector3(0.1f, 1.3f, -9.9f);
-    Vector3 handRotRef = new Vector3(330.6f, 352.7f, 88.8f);
+    Vector3 handRotRef = new Vector3(322.7f, 349f, 85.9f);
     Vector3 avatarScaleRef;
 
     bool calibrateFlag = false;
@@ -19,35 +20,36 @@ public class AvatarCalibrator
     Vector3 preUpperarmPos;
     Vector3 preForearmPos;
 
-	public AvatarCalibrator(Transform avatarTransform, Transform shoulder, Transform upperarm, Transform forearm, Transform hand)
+	public AvatarCalibrator(Transform avatarTransform, Transform shoulder, Transform upperarm, Transform forearm, Transform hand, Transform touchTransform)
 	{
         this.avatarTransform = avatarTransform;
         this.shoulder = shoulder;
         this.upperarm = upperarm;
         this.forearm = forearm;
         this.hand = hand;
+        this.touchTransform = touchTransform;
         avatarScaleRef = avatarTransform.localScale;
-        preShoulderPos = shoulder.position;
+        preShoulderPos = shoulder.localPosition;
         preUpperarmPos = upperarm.position;
         preForearmPos = forearm.position;
 	}
 
-    public AvatarCalibrator(Transform hand) {
-        this.hand = hand;
+    public AvatarCalibrator(Transform touchTransform) {
+        this.touchTransform = touchTransform;
     }
 
     public void calibrateAvatarPosition(Vector3 headPos)
     {
         Vector3 newAvatarPos = new Vector3(headPos.x, 0, headPos.z);
         avatarTransform.position = newAvatarPos;
-        //Debug.Log(avatarTransform.position);
+        Debug.Log(avatarTransform.position);
     }
 
     public void calibrateAvatarScale(Vector3 headPos)
     {
         float scale = headPos.y / headPosRef.y;
         avatarTransform.localScale = new Vector3(avatarScaleRef.x, avatarScaleRef.y*scale, avatarScaleRef.z);
-        //Debug.Log(avatarTransform.localScale);
+        Debug.Log(avatarTransform.localScale);
     }
 
     public void calibrateShoulderPosition(Vector3 headPos, Vector3 handPos)
@@ -59,10 +61,19 @@ public class AvatarCalibrator
         float heightRef = headPosRef.y - handPosRef.y;
         float heightDiff = height - heightRef;
         if (calibrateFlag) {
-            shoulder.position = preShoulderPos;
+            //shoulder.localPosition = preShoulderPos;
         }
-        Debug.Log("Shoulder Position Calibration : " + widthDiff + "," + heightDiff);
-        shoulder.position += new Vector3(widthDiff, heightDiff, 0);
+        //Debug.Log("Shoulder Position Calibration : " + widthDiff + "," + heightDiff);
+        Debug.Log("Shoulder Position Calibration : " + (handPos.x-shoulder.position.x) + "," + (handPos.y-shoulder.position.y));
+        //shoulder.position += new Vector3(widthDiff, heightDiff, 0);
+        //forearm.position = new Vector3(handPos.x, handPos.y, forearm.position.z);
+        //shoulder.position = new Vector3(hand.position.x, hand.position.y, shoulder.position.z);
+        //forearm.position = new Vector3(hand.position.x, hand.position.y, forearm.position.z);
+        //upperarm.position = new Vector3(hand.position.x, hand.position.y, upperarm.position.z);
+        shoulder.position = new Vector3(handPos.x, handPos.y, shoulder.position.z);
+        
+        //upperarm.position = new Vector3(forearm.position.x, forearm.position.y, upperarm.position.z);
+        //shoulder.position = new Vector3(touchTransform.position.x, touchTransform.position.y, shoulder.position.z);
         calibrateFlag = true;
     }
 
@@ -72,8 +83,8 @@ public class AvatarCalibrator
         float armLengthRef = handPosRef.z - headPosRef.z;
         float armLengthDiff = armLength - armLengthRef;
         if (calibrateFlag) {
-            upperarm.position = preUpperarmPos;
-            forearm.position = preForearmPos;
+            //upperarm.position = preUpperarmPos;
+            //forearm.position = preForearmPos;
         }
         Debug.Log("Arm Length Calibratioin : " + armLengthDiff);
         upperarm.Translate(new Vector3(0, armLengthDiff / 4, 0));
@@ -82,13 +93,16 @@ public class AvatarCalibrator
     }
 
     public bool isArmParallel() {
-        float x_min = handRotRef.x - 5f;
-        float x_max = handRotRef.x + 5f;
-        float y_min = handRotRef.y - 5f;
-        float y_max = handRotRef.y + 5f;
-        float x = hand.localEulerAngles.x;
-        float y = hand.localEulerAngles.y;
-        //Debug.Log(hand.localEulerAngles);
+        float thr_x = 5f, thr_y = 5f;
+        float x_min = getAvailableAngle(handRotRef.x - thr_x);
+        float x_max = getAvailableAngle(handRotRef.x + thr_x);
+        float y_min = getAvailableAngle(handRotRef.y - thr_y);
+        float y_max = getAvailableAngle(handRotRef.y + thr_y);
+        float x = getAvailableAngle(touchTransform.localEulerAngles.x);
+        float y = getAvailableAngle(touchTransform.localEulerAngles.y);
+        //Debug.Log(touchTransform.localEulerAngles);
+        //Debug.Log(x_min + "," + x_max + "," + y_min + "," + y_max);
+        //Debug.Log(x + "," + y);
         if (x_min <= x && x <= x_max) {
             if(y_min <= y && y <= y_max) {
                 //Debug.Log("calibration OK");
@@ -96,5 +110,15 @@ public class AvatarCalibrator
             }
         }
         return false;
+    }
+
+    public float getAvailableAngle(float angle) {
+        float ret;
+        if(angle <= 180f) {
+            ret = angle;
+        }else{
+            ret = angle - 360f;
+        }
+        return ret;
     }
 }

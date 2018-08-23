@@ -15,7 +15,8 @@ public class CalibrationTextScript : MonoBehaviour {
 	void Update () {
         if (ac.isArmParallel()) {
             this.GetComponent<TextMesh>().text = "OK";
-        }
-        this.GetComponent<TextMesh>().text = "NG";
+        } else {
+            this.GetComponent<TextMesh>().text = "NG";
+        }   
 	}
 }

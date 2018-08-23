@@ -175,7 +175,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 13700000, guid: 8cd032619f919c1439f9cdc58246d32e, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 100020, guid: 8cd032619f919c1439f9cdc58246d32e, type: 3}
       propertyPath: m_TagString
@@ -229,6 +229,22 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 0.93
       objectReference: {fileID: 0}
+    - target: {fileID: 400090, guid: 8cd032619f919c1439f9cdc58246d32e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.4896764
+      objectReference: {fileID: 0}
+    - target: {fileID: 400090, guid: 8cd032619f919c1439f9cdc58246d32e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.09686131
+      objectReference: {fileID: 0}
+    - target: {fileID: 400090, guid: 8cd032619f919c1439f9cdc58246d32e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.029678926
+      objectReference: {fileID: 0}
+    - target: {fileID: 400090, guid: 8cd032619f919c1439f9cdc58246d32e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.86599886
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8cd032619f919c1439f9cdc58246d32e, type: 3}
   m_IsPrefabParent: 0
@@ -239,10 +255,6 @@ GameObject:
 --- !u!1 &65017340 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100036, guid: 8cd032619f919c1439f9cdc58246d32e, type: 3}
-  m_PrefabInternal: {fileID: 190509469}
---- !u!4 &65017341 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 400036, guid: 8cd032619f919c1439f9cdc58246d32e, type: 3}
   m_PrefabInternal: {fileID: 190509469}
 --- !u!114 &65017342
 MonoBehaviour:
@@ -255,20 +267,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1c783e5021789246a1c461ec6bdfb4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isAwakeAutoSetup: 0
+  isAwakeAutoSetup: 1
   isEnableTouchControl: 1
-  fingerType: 3
+  fingerType: 1
   touchButtonPool: 
-  trigger: 1
-  triggerStart: 0.25
+  trigger: 0
+  triggerStart: 0
   relatedTouchButton: 0
-  jointPool:
-  - {fileID: 65017341}
-  jointLevelPool:
-  - 1
-  axis: {x: -1, y: 0, z: 0}
+  jointPool: []
+  jointLevelPool: []
+  axis: {x: 0, y: 1, z: 0}
   angle: 0
-  maxAngle: 45
+  maxAngle: 90
   openLerpLevel: 0.3
   closeLerpLevel: 0.15
   isThumb: 0
@@ -287,10 +297,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ce087535622f6d488ba7716d679bf59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &72744795 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 400062, guid: cb277b2073cd328448389b85db081d23, type: 3}
-  m_PrefabInternal: {fileID: 1874788692}
 --- !u!1001 &79547395
 Prefab:
   m_ObjectHideFlags: 0
@@ -546,8 +552,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAwakeAutoSetup: 0
   isEnableTouchControl: 1
-  fingerType: 1
-  touchButtonPool: 
+  fingerType: 10
+  touchButtonPool: 10000000
   trigger: 2
   triggerStart: 0.234
   relatedTouchButton: 0
@@ -634,7 +640,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 13700000, guid: 8cd032619f919c1439f9cdc58246d32e, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400010, guid: 8cd032619f919c1439f9cdc58246d32e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -666,7 +672,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400016, guid: 8cd032619f919c1439f9cdc58246d32e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.25
+      value: 0.2129231
       objectReference: {fileID: 0}
     - target: {fileID: 400020, guid: 8cd032619f919c1439f9cdc58246d32e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -675,14 +681,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8cd032619f919c1439f9cdc58246d32e, type: 3}
   m_IsPrefabParent: 0
---- !u!4 &190509470 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 400020, guid: 8cd032619f919c1439f9cdc58246d32e, type: 3}
-  m_PrefabInternal: {fileID: 190509469}
---- !u!4 &194997281 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 400060, guid: cb277b2073cd328448389b85db081d23, type: 3}
-  m_PrefabInternal: {fileID: 1874788692}
 --- !u!4 &196425696 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400088, guid: 8cd032619f919c1439f9cdc58246d32e, type: 3}
@@ -856,10 +854,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!4 &231523116 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 400112, guid: cb277b2073cd328448389b85db081d23, type: 3}
-  m_PrefabInternal: {fileID: 1874788692}
 --- !u!4 &278815909 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400060, guid: 8cd032619f919c1439f9cdc58246d32e, type: 3}
@@ -1050,10 +1044,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -0.0000076293945}
   m_SizeDelta: {x: 400, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!4 &432813757 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 400110, guid: cb277b2073cd328448389b85db081d23, type: 3}
-  m_PrefabInternal: {fileID: 1874788692}
 --- !u!1 &450284203
 GameObject:
   m_ObjectHideFlags: 0
@@ -1070,7 +1060,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!154 &450284204
 TerrainCollider:
   m_ObjectHideFlags: 0
@@ -1125,17 +1115,9 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &465514582 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 400116, guid: cb277b2073cd328448389b85db081d23, type: 3}
-  m_PrefabInternal: {fileID: 1874788692}
 --- !u!1 &471848032 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100032, guid: 8cd032619f919c1439f9cdc58246d32e, type: 3}
-  m_PrefabInternal: {fileID: 190509469}
---- !u!4 &471848033 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 400032, guid: 8cd032619f919c1439f9cdc58246d32e, type: 3}
   m_PrefabInternal: {fileID: 190509469}
 --- !u!114 &471848034
 MonoBehaviour:
@@ -1148,27 +1130,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1c783e5021789246a1c461ec6bdfb4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isAwakeAutoSetup: 0
+  isAwakeAutoSetup: 1
   isEnableTouchControl: 1
-  fingerType: 3
+  fingerType: 1
   touchButtonPool: 
-  trigger: 1
-  triggerStart: 0.25
+  trigger: 0
+  triggerStart: 0
   relatedTouchButton: 0
-  jointPool:
-  - {fileID: 471848033}
-  jointLevelPool:
-  - 1
-  axis: {x: -1, y: 0, z: 0}
+  jointPool: []
+  jointLevelPool: []
+  axis: {x: 0, y: 1, z: 0}
   angle: 0
-  maxAngle: 80
+  maxAngle: 90
   openLerpLevel: 0.3
   closeLerpLevel: 0.15
   isThumb: 0
---- !u!4 &473791315 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 400022, guid: cb277b2073cd328448389b85db081d23, type: 3}
-  m_PrefabInternal: {fileID: 1874788692}
 --- !u!1001 &473855626
 Prefab:
   m_ObjectHideFlags: 0
@@ -1231,10 +1207,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a2d308598386f4a0797f87a4b95b9dd1, type: 2}
   m_IsPrefabParent: 0
---- !u!4 &494266929 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 400040, guid: cb277b2073cd328448389b85db081d23, type: 3}
-  m_PrefabInternal: {fileID: 1874788692}
 --- !u!1 &508769008
 GameObject:
   m_ObjectHideFlags: 0
@@ -1302,10 +1274,6 @@ Transform:
 GameObject:
   m_PrefabParentObject: {fileID: 100064, guid: 8cd032619f919c1439f9cdc58246d32e, type: 3}
   m_PrefabInternal: {fileID: 190509469}
---- !u!4 &510937104 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 400064, guid: 8cd032619f919c1439f9cdc58246d32e, type: 3}
-  m_PrefabInternal: {fileID: 190509469}
 --- !u!114 &510937105
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1317,20 +1285,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1c783e5021789246a1c461ec6bdfb4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isAwakeAutoSetup: 0
+  isAwakeAutoSetup: 1
   isEnableTouchControl: 1
-  fingerType: 6
+  fingerType: 1
   touchButtonPool: 
-  trigger: 1
-  triggerStart: 0.257
+  trigger: 0
+  triggerStart: 0
   relatedTouchButton: 0
-  jointPool:
-  - {fileID: 510937104}
-  jointLevelPool:
-  - 1
-  axis: {x: -1, y: 0.1, z: 0}
+  jointPool: []
+  jointLevelPool: []
+  axis: {x: 0, y: 1, z: 0}
   angle: 0
-  maxAngle: 70
+  maxAngle: 90
   openLerpLevel: 0.3
   closeLerpLevel: 0.15
   isThumb: 0
@@ -1366,10 +1332,6 @@ Transform:
 GameObject:
   m_PrefabParentObject: {fileID: 100072, guid: 8cd032619f919c1439f9cdc58246d32e, type: 3}
   m_PrefabInternal: {fileID: 190509469}
---- !u!4 &564889921 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 400072, guid: 8cd032619f919c1439f9cdc58246d32e, type: 3}
-  m_PrefabInternal: {fileID: 190509469}
 --- !u!114 &564889922
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1381,30 +1343,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1c783e5021789246a1c461ec6bdfb4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isAwakeAutoSetup: 0
+  isAwakeAutoSetup: 1
   isEnableTouchControl: 1
-  fingerType: 6
+  fingerType: 1
   touchButtonPool: 
-  trigger: 1
-  triggerStart: 0.252
+  trigger: 0
+  triggerStart: 0
   relatedTouchButton: 0
-  jointPool:
-  - {fileID: 564889921}
-  jointLevelPool:
-  - 1
-  axis: {x: -1, y: 0, z: 0}
+  jointPool: []
+  jointLevelPool: []
+  axis: {x: 0, y: 1, z: 0}
   angle: 0
-  maxAngle: 60
+  maxAngle: 90
   openLerpLevel: 0.3
   closeLerpLevel: 0.15
   isThumb: 0
 --- !u!1 &566544578 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100084, guid: 8cd032619f919c1439f9cdc58246d32e, type: 3}
-  m_PrefabInternal: {fileID: 190509469}
---- !u!4 &566544579 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 400084, guid: 8cd032619f919c1439f9cdc58246d32e, type: 3}
   m_PrefabInternal: {fileID: 190509469}
 --- !u!114 &566544580
 MonoBehaviour:
@@ -1417,20 +1373,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1c783e5021789246a1c461ec6bdfb4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isAwakeAutoSetup: 0
+  isAwakeAutoSetup: 1
   isEnableTouchControl: 1
-  fingerType: 5
+  fingerType: 1
   touchButtonPool: 
-  trigger: 1
-  triggerStart: 0.247
+  trigger: 0
+  triggerStart: 0
   relatedTouchButton: 0
-  jointPool:
-  - {fileID: 566544579}
-  jointLevelPool:
-  - 1
-  axis: {x: -1, y: 0, z: 0}
+  jointPool: []
+  jointLevelPool: []
+  axis: {x: 0, y: 1, z: 0}
   angle: 0
-  maxAngle: 75
+  maxAngle: 90
   openLerpLevel: 0.3
   closeLerpLevel: 0.15
   isThumb: 0
@@ -1456,7 +1410,7 @@ MonoBehaviour:
   isAwakeAutoSetup: 0
   isEnableTouchControl: 1
   fingerType: 9
-  touchButtonPool: 
+  touchButtonPool: 10000000
   trigger: 2
   triggerStart: 0.254
   relatedTouchButton: 0
@@ -1492,7 +1446,7 @@ MonoBehaviour:
   isAwakeAutoSetup: 0
   isEnableTouchControl: 1
   fingerType: 7
-  touchButtonPool: 
+  touchButtonPool: 0100000002000000
   trigger: 2
   triggerStart: 0.612
   relatedTouchButton: 0
@@ -1548,8 +1502,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b94987ec374eec2458641c6a66b46ebd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stretchingClip: {fileID: 622755898}
-  shrinkingClip: {fileID: 622755897}
+  stretchingClip: {fileID: 0}
+  shrinkingClip: {fileID: 0}
 --- !u!82 &622755897
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1740,7 +1694,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecfe96f85064d15429c1294ad4c55624, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  invisibleAvatar: {fileID: 2146803994}
+  invisibleAvatar: {fileID: 0}
 --- !u!23 &624274924
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -2061,6 +2015,87 @@ Transform:
 Transform:
   m_PrefabParentObject: {fileID: 400020, guid: 8cd032619f919c1439f9cdc58246d32e, type: 3}
   m_PrefabInternal: {fileID: 54974414}
+--- !u!1 &742909792
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 742909793}
+  - component: {fileID: 742909796}
+  - component: {fileID: 742909795}
+  - component: {fileID: 742909794}
+  m_Layer: 0
+  m_Name: Sphere
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &742909793
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 742909792}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_Children: []
+  m_Father: {fileID: 1686068528}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &742909794
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 742909792}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: dcca7a3502858e84ab6d5f11a14518e0, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+--- !u!135 &742909795
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 742909792}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &742909796
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 742909792}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &763649200
 GameObject:
   m_ObjectHideFlags: 0
@@ -2347,10 +2382,6 @@ Transform:
   m_Father: {fileID: 376774601}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90, y: -90, z: 0}
---- !u!4 &869170248 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 400088, guid: cb277b2073cd328448389b85db081d23, type: 3}
-  m_PrefabInternal: {fileID: 1874788692}
 --- !u!4 &905265535 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400006, guid: 8cd032619f919c1439f9cdc58246d32e, type: 3}
@@ -2500,7 +2531,7 @@ MonoBehaviour:
   isAwakeAutoSetup: 0
   isEnableTouchControl: 1
   fingerType: 8
-  touchButtonPool: 
+  touchButtonPool: 10000000
   trigger: 2
   triggerStart: 0.251
   relatedTouchButton: 0
@@ -2593,8 +2624,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAwakeAutoSetup: 0
   isEnableTouchControl: 1
-  fingerType: 11
-  touchButtonPool: 
+  fingerType: 1
+  touchButtonPool: 10000000
   trigger: 2
   triggerStart: 0.247
   relatedTouchButton: 0
@@ -2630,7 +2661,7 @@ MonoBehaviour:
   isAwakeAutoSetup: 0
   isEnableTouchControl: 1
   fingerType: 9
-  touchButtonPool: 
+  touchButtonPool: 10000000
   trigger: 2
   triggerStart: 0.25
   relatedTouchButton: 0
@@ -2666,7 +2697,7 @@ MonoBehaviour:
   isAwakeAutoSetup: 0
   isEnableTouchControl: 1
   fingerType: 8
-  touchButtonPool: 
+  touchButtonPool: 10000000
   trigger: 2
   triggerStart: 0.254
   relatedTouchButton: 0
@@ -2789,10 +2820,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2952df9f1eac2ee4ca1ae6235a6f7449, type: 3}
   m_IsPrefabParent: 0
---- !u!4 &996013512 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 400000, guid: cb277b2073cd328448389b85db081d23, type: 3}
-  m_PrefabInternal: {fileID: 1874788692}
 --- !u!1 &1007230282 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: d9d1fbfcf69364ffd8f9c6ade9ce90fe, type: 2}
@@ -2820,10 +2847,6 @@ Transform:
 GameObject:
   m_PrefabParentObject: {fileID: 100102, guid: 8cd032619f919c1439f9cdc58246d32e, type: 3}
   m_PrefabInternal: {fileID: 190509469}
---- !u!4 &1018485702 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 400102, guid: 8cd032619f919c1439f9cdc58246d32e, type: 3}
-  m_PrefabInternal: {fileID: 190509469}
 --- !u!114 &1018485703
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2835,23 +2858,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1c783e5021789246a1c461ec6bdfb4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isAwakeAutoSetup: 0
+  isAwakeAutoSetup: 1
   isEnableTouchControl: 1
-  fingerType: 2
+  fingerType: 1
   touchButtonPool: 
-  trigger: 1
-  triggerStart: 0.635
+  trigger: 0
+  triggerStart: 0
   relatedTouchButton: 0
-  jointPool:
-  - {fileID: 1018485702}
-  jointLevelPool:
-  - 1
-  axis: {x: -1, y: 0.5, z: 0}
+  jointPool: []
+  jointLevelPool: []
+  axis: {x: 0, y: 1, z: 0}
   angle: 0
-  maxAngle: 60
+  maxAngle: 90
   openLerpLevel: 0.3
   closeLerpLevel: 0.15
-  isThumb: 1
+  isThumb: 0
 --- !u!1 &1044431992
 GameObject:
   m_ObjectHideFlags: 0
@@ -3020,17 +3041,92 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6baa76851ccf50c4c81547d5f7186564, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &1068852589 stripped
+--- !u!1 &1073176036
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1073176040}
+  - component: {fileID: 1073176039}
+  - component: {fileID: 1073176038}
+  - component: {fileID: 1073176037}
+  m_Layer: 0
+  m_Name: Plane
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!23 &1073176037
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1073176036}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: 035a48a539312914f8762cf7100ec0cb, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 1
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+--- !u!64 &1073176038
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1073176036}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_InflateMesh: 0
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!33 &1073176039
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1073176036}
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1073176040
 Transform:
-  m_PrefabParentObject: {fileID: 400010, guid: 8cd032619f919c1439f9cdc58246d32e, type: 3}
-  m_PrefabInternal: {fileID: 190509469}
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1073176036}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: -10.0362015}
+  m_LocalScale: {x: 10, y: 1, z: 10}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1073941101 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100046, guid: 8cd032619f919c1439f9cdc58246d32e, type: 3}
-  m_PrefabInternal: {fileID: 190509469}
---- !u!4 &1073941102 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 400046, guid: 8cd032619f919c1439f9cdc58246d32e, type: 3}
   m_PrefabInternal: {fileID: 190509469}
 --- !u!114 &1073941103
 MonoBehaviour:
@@ -3043,27 +3139,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1c783e5021789246a1c461ec6bdfb4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isAwakeAutoSetup: 0
+  isAwakeAutoSetup: 1
   isEnableTouchControl: 1
-  fingerType: 4
+  fingerType: 1
   touchButtonPool: 
-  trigger: 1
-  triggerStart: 0.242
+  trigger: 0
+  triggerStart: 0
   relatedTouchButton: 0
-  jointPool:
-  - {fileID: 1073941102}
-  jointLevelPool:
-  - 1
-  axis: {x: -1, y: 0, z: 0}
+  jointPool: []
+  jointLevelPool: []
+  axis: {x: 0, y: 1, z: 0}
   angle: 0
-  maxAngle: 70
+  maxAngle: 90
   openLerpLevel: 0.3
   closeLerpLevel: 0.15
   isThumb: 0
---- !u!4 &1074800565 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 400114, guid: cb277b2073cd328448389b85db081d23, type: 3}
-  m_PrefabInternal: {fileID: 1874788692}
 --- !u!1001 &1077949651
 Prefab:
   m_ObjectHideFlags: 0
@@ -3170,7 +3260,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 2037080, guid: 126d619cf4daa52469682f85c1378b4a, type: 2}
       propertyPath: near clip plane
-      value: 0.01
+      value: 0.08
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 126d619cf4daa52469682f85c1378b4a, type: 2}
       propertyPath: usePositionTracking
@@ -3274,10 +3364,6 @@ Rigidbody:
 GameObject:
   m_PrefabParentObject: {fileID: 100068, guid: 8cd032619f919c1439f9cdc58246d32e, type: 3}
   m_PrefabInternal: {fileID: 190509469}
---- !u!4 &1105197801 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 400068, guid: 8cd032619f919c1439f9cdc58246d32e, type: 3}
-  m_PrefabInternal: {fileID: 190509469}
 --- !u!114 &1105197802
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3289,20 +3375,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1c783e5021789246a1c461ec6bdfb4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isAwakeAutoSetup: 0
+  isAwakeAutoSetup: 1
   isEnableTouchControl: 1
-  fingerType: 6
+  fingerType: 1
   touchButtonPool: 
-  trigger: 1
-  triggerStart: 0.242
+  trigger: 0
+  triggerStart: 0
   relatedTouchButton: 0
-  jointPool:
-  - {fileID: 1105197801}
-  jointLevelPool:
-  - 1
-  axis: {x: -1, y: 0.1, z: 0}
+  jointPool: []
+  jointLevelPool: []
+  axis: {x: 0, y: 1, z: 0}
   angle: 0
-  maxAngle: 80
+  maxAngle: 90
   openLerpLevel: 0.3
   closeLerpLevel: 0.15
   isThumb: 0
@@ -3407,8 +3491,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95bfbe505113a3f4d94ff35286041205, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosion: {fileID: 1981417628110876, guid: e71b47fc21ce83243b77b4ae886d8a5d, type: 2}
-  gomuSecond: {fileID: 1382641085748940, guid: cfa429ec6a169314f8f591128e18278c, type: 2}
+  explosion: {fileID: 0}
+  gomuSecond: {fileID: 0}
 --- !u!54 &1199436944
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3595,10 +3679,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3937fd6acc53464da0b9e0cbb816fcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &1202845470 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 400006, guid: cb277b2073cd328448389b85db081d23, type: 3}
-  m_PrefabInternal: {fileID: 1874788692}
 --- !u!1001 &1251442766
 Prefab:
   m_ObjectHideFlags: 0
@@ -3710,7 +3790,7 @@ MonoBehaviour:
   isAwakeAutoSetup: 0
   isEnableTouchControl: 1
   fingerType: 11
-  touchButtonPool: 
+  touchButtonPool: 10000000
   trigger: 2
   triggerStart: 0.25
   relatedTouchButton: 0
@@ -3877,8 +3957,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAwakeAutoSetup: 0
   isEnableTouchControl: 1
-  fingerType: 1
-  touchButtonPool: 
+  fingerType: 10
+  touchButtonPool: 10000000
   trigger: 2
   triggerStart: 0.25
   relatedTouchButton: 0
@@ -3915,14 +3995,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!4 &1372962479 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 400090, guid: cb277b2073cd328448389b85db081d23, type: 3}
-  m_PrefabInternal: {fileID: 1874788692}
---- !u!4 &1374583730 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 400002, guid: cb277b2073cd328448389b85db081d23, type: 3}
-  m_PrefabInternal: {fileID: 1874788692}
 --- !u!4 &1380882405 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400112, guid: 8cd032619f919c1439f9cdc58246d32e, type: 3}
@@ -3930,10 +4002,6 @@ Transform:
 --- !u!1 &1385225802 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100106, guid: 8cd032619f919c1439f9cdc58246d32e, type: 3}
-  m_PrefabInternal: {fileID: 190509469}
---- !u!4 &1385225803 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 400106, guid: 8cd032619f919c1439f9cdc58246d32e, type: 3}
   m_PrefabInternal: {fileID: 190509469}
 --- !u!114 &1385225804
 MonoBehaviour:
@@ -3946,31 +4014,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1c783e5021789246a1c461ec6bdfb4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isAwakeAutoSetup: 0
+  isAwakeAutoSetup: 1
   isEnableTouchControl: 1
-  fingerType: 2
+  fingerType: 1
   touchButtonPool: 
-  trigger: 1
-  triggerStart: 0.616
+  trigger: 0
+  triggerStart: 0
   relatedTouchButton: 0
-  jointPool:
-  - {fileID: 1385225803}
-  jointLevelPool:
-  - 1
-  axis: {x: -1, y: 0.5, z: 0}
+  jointPool: []
+  jointLevelPool: []
+  axis: {x: 0, y: 1, z: 0}
   angle: 0
-  maxAngle: 60
+  maxAngle: 90
   openLerpLevel: 0.3
   closeLerpLevel: 0.15
-  isThumb: 1
---- !u!4 &1402923640 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 400016, guid: cb277b2073cd328448389b85db081d23, type: 3}
-  m_PrefabInternal: {fileID: 1874788692}
---- !u!4 &1403959456 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 400092, guid: cb277b2073cd328448389b85db081d23, type: 3}
-  m_PrefabInternal: {fileID: 1874788692}
+  isThumb: 0
 --- !u!4 &1406508075 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400004, guid: 8cd032619f919c1439f9cdc58246d32e, type: 3}
@@ -3998,10 +4056,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!4 &1413371419 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 400042, guid: cb277b2073cd328448389b85db081d23, type: 3}
-  m_PrefabInternal: {fileID: 1874788692}
 --- !u!4 &1428215248 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400016, guid: 8cd032619f919c1439f9cdc58246d32e, type: 3}
@@ -4057,7 +4111,8 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: ArmShrinkEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-  stretchDegree: 10
+  invisibleAvatar: {fileID: 2146803993}
+  stretchDegree: 50
   stretchTotalTime: 1
 --- !u!1 &1456879665
 GameObject:
@@ -4114,16 +4169,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   standard_speed: 5
-  mechanismMode: 3
-  stretchTime: 1
+  mechanismMode: 0
+  stretchTime: 0.9
   keepTime: 0.05
 --- !u!1 &1508066382 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100050, guid: 8cd032619f919c1439f9cdc58246d32e, type: 3}
-  m_PrefabInternal: {fileID: 190509469}
---- !u!4 &1508066383 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 400050, guid: 8cd032619f919c1439f9cdc58246d32e, type: 3}
   m_PrefabInternal: {fileID: 190509469}
 --- !u!114 &1508066384
 MonoBehaviour:
@@ -4136,20 +4187,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1c783e5021789246a1c461ec6bdfb4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isAwakeAutoSetup: 0
+  isAwakeAutoSetup: 1
   isEnableTouchControl: 1
-  fingerType: 4
+  fingerType: 1
   touchButtonPool: 
-  trigger: 1
-  triggerStart: 0.257
+  trigger: 0
+  triggerStart: 0
   relatedTouchButton: 0
-  jointPool:
-  - {fileID: 1508066383}
-  jointLevelPool:
-  - 1
-  axis: {x: -1, y: 0, z: 0}
+  jointPool: []
+  jointLevelPool: []
+  axis: {x: 0, y: 1, z: 0}
   angle: 0
-  maxAngle: 80
+  maxAngle: 90
   openLerpLevel: 0.3
   closeLerpLevel: 0.15
   isThumb: 0
@@ -4215,10 +4264,6 @@ Prefab:
 GameObject:
   m_PrefabParentObject: {fileID: 100080, guid: 8cd032619f919c1439f9cdc58246d32e, type: 3}
   m_PrefabInternal: {fileID: 190509469}
---- !u!4 &1557705780 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 400080, guid: 8cd032619f919c1439f9cdc58246d32e, type: 3}
-  m_PrefabInternal: {fileID: 190509469}
 --- !u!114 &1557705781
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4230,20 +4275,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1c783e5021789246a1c461ec6bdfb4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isAwakeAutoSetup: 0
+  isAwakeAutoSetup: 1
   isEnableTouchControl: 1
-  fingerType: 5
+  fingerType: 1
   touchButtonPool: 
-  trigger: 1
-  triggerStart: 0.252
+  trigger: 0
+  triggerStart: 0
   relatedTouchButton: 0
-  jointPool:
-  - {fileID: 1557705780}
-  jointLevelPool:
-  - 1
-  axis: {x: -1, y: 0.1, z: 0}
+  jointPool: []
+  jointLevelPool: []
+  axis: {x: 0, y: 1, z: 0}
   angle: 0
-  maxAngle: 80
+  maxAngle: 90
   openLerpLevel: 0.3
   closeLerpLevel: 0.15
   isThumb: 0
@@ -4259,10 +4302,6 @@ Transform:
 GameObject:
   m_PrefabParentObject: {fileID: 100054, guid: 8cd032619f919c1439f9cdc58246d32e, type: 3}
   m_PrefabInternal: {fileID: 190509469}
---- !u!4 &1592137097 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 400054, guid: 8cd032619f919c1439f9cdc58246d32e, type: 3}
-  m_PrefabInternal: {fileID: 190509469}
 --- !u!114 &1592137098
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4274,20 +4313,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1c783e5021789246a1c461ec6bdfb4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isAwakeAutoSetup: 0
+  isAwakeAutoSetup: 1
   isEnableTouchControl: 1
-  fingerType: 4
+  fingerType: 1
   touchButtonPool: 
-  trigger: 1
-  triggerStart: 0.25
+  trigger: 0
+  triggerStart: 0
   relatedTouchButton: 0
-  jointPool:
-  - {fileID: 1592137097}
-  jointLevelPool:
-  - 1
-  axis: {x: -1, y: 0, z: 0}
+  jointPool: []
+  jointLevelPool: []
+  axis: {x: 0, y: 1, z: 0}
   angle: 0
-  maxAngle: 60
+  maxAngle: 90
   openLerpLevel: 0.3
   closeLerpLevel: 0.15
   isThumb: 0
@@ -4316,28 +4353,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fixTransforms: 1
   references:
-    root: {fileID: 1650754975}
-    pelvis: {fileID: 72744795}
-    spine: {fileID: 1403959456}
-    chest: {fileID: 2009425765}
-    neck: {fileID: 194997281}
-    head: {fileID: 473791315}
-    leftShoulder: {fileID: 869170248}
-    leftUpperArm: {fileID: 1914886193}
-    leftForearm: {fileID: 2086313199}
-    leftHand: {fileID: 1074800565}
-    rightShoulder: {fileID: 1372962479}
-    rightUpperArm: {fileID: 1202845470}
-    rightForearm: {fileID: 1402923640}
-    rightHand: {fileID: 465514582}
-    leftThigh: {fileID: 2085900219}
-    leftCalf: {fileID: 494266929}
-    leftFoot: {fileID: 996013512}
-    leftToes: {fileID: 432813757}
-    rightThigh: {fileID: 1920104003}
-    rightCalf: {fileID: 1413371419}
-    rightFoot: {fileID: 1374583730}
-    rightToes: {fileID: 231523116}
+    root: {fileID: 0}
+    pelvis: {fileID: 0}
+    spine: {fileID: 0}
+    chest: {fileID: 0}
+    neck: {fileID: 0}
+    head: {fileID: 0}
+    leftShoulder: {fileID: 0}
+    leftUpperArm: {fileID: 0}
+    leftForearm: {fileID: 0}
+    leftHand: {fileID: 0}
+    rightShoulder: {fileID: 0}
+    rightUpperArm: {fileID: 0}
+    rightForearm: {fileID: 0}
+    rightHand: {fileID: 0}
+    leftThigh: {fileID: 0}
+    leftCalf: {fileID: 0}
+    leftFoot: {fileID: 0}
+    leftToes: {fileID: 0}
+    rightThigh: {fileID: 0}
+    rightCalf: {fileID: 0}
+    rightFoot: {fileID: 0}
+    rightToes: {fileID: 0}
   solver:
     IKPosition: {x: 0, y: 0, z: 0}
     IKPositionWeight: 1
@@ -4345,12 +4382,12 @@ MonoBehaviour:
     plantFeet: 1
     spine:
       bones: []
-      headTarget: {fileID: 2046488355}
+      headTarget: {fileID: 0}
       pelvisTarget: {fileID: 0}
       positionWeight: 1
       rotationWeight: 1
-      pelvisPositionWeight: 1
-      pelvisRotationWeight: 0.5
+      pelvisPositionWeight: 0
+      pelvisRotationWeight: 0
       chestGoal: {fileID: 0}
       chestGoalWeight: 0
       minHeadHeight: 0.8
@@ -4363,19 +4400,7 @@ MonoBehaviour:
       maxRootAngle: 25
     leftArm:
       bones: []
-      target: {fileID: 840761399}
-      bendGoal: {fileID: 0}
-      positionWeight: 0
-      rotationWeight: 0
-      shoulderRotationMode: 0
-      shoulderRotationWeight: 1
-      bendGoalWeight: 0
-      swivelOffset: 0
-      wristToPalmAxis: {x: 0, y: 1, z: 0}
-      palmToThumbAxis: {x: 0, y: 0, z: 1}
-    rightArm:
-      bones: []
-      target: {fileID: 1686068528}
+      target: {fileID: 0}
       bendGoal: {fileID: 0}
       positionWeight: 1
       rotationWeight: 1
@@ -4383,26 +4408,38 @@ MonoBehaviour:
       shoulderRotationWeight: 1
       bendGoalWeight: 0
       swivelOffset: 0
-      wristToPalmAxis: {x: 0, y: 1, z: 0}
-      palmToThumbAxis: {x: 0, y: 0, z: 1}
-    leftLeg:
+      wristToPalmAxis: {x: 0, y: 0, z: 0}
+      palmToThumbAxis: {x: 0, y: 0, z: 0}
+    rightArm:
       bones: []
       target: {fileID: 0}
       bendGoal: {fileID: 0}
       positionWeight: 1
       rotationWeight: 1
+      shoulderRotationMode: 0
+      shoulderRotationWeight: 1
+      bendGoalWeight: 0
+      swivelOffset: 0
+      wristToPalmAxis: {x: 0, y: 0, z: 0}
+      palmToThumbAxis: {x: 0, y: 0, z: 0}
+    leftLeg:
+      bones: []
+      target: {fileID: 0}
+      bendGoal: {fileID: 0}
+      positionWeight: 0
+      rotationWeight: 0
       bendGoalWeight: 0
       swivelOffset: 0
     rightLeg:
       bones: []
       target: {fileID: 0}
       bendGoal: {fileID: 0}
-      positionWeight: 1
-      rotationWeight: 1
+      positionWeight: 0
+      rotationWeight: 0
       bendGoalWeight: 0
       swivelOffset: 0
     locomotion:
-      weight: 0
+      weight: 1
       footDistance: 0.3
       stepThreshold: 0.4
       angleThreshold: 60
@@ -4484,10 +4521,6 @@ MonoBehaviour:
 GameObject:
   m_PrefabParentObject: {fileID: 100076, guid: 8cd032619f919c1439f9cdc58246d32e, type: 3}
   m_PrefabInternal: {fileID: 190509469}
---- !u!4 &1651379707 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 400076, guid: 8cd032619f919c1439f9cdc58246d32e, type: 3}
-  m_PrefabInternal: {fileID: 190509469}
 --- !u!114 &1651379708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4499,20 +4532,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1c783e5021789246a1c461ec6bdfb4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isAwakeAutoSetup: 0
+  isAwakeAutoSetup: 1
   isEnableTouchControl: 1
-  fingerType: 5
+  fingerType: 1
   touchButtonPool: 
-  trigger: 1
-  triggerStart: 0.252
+  trigger: 0
+  triggerStart: 0
   relatedTouchButton: 0
-  jointPool:
-  - {fileID: 1651379707}
-  jointLevelPool:
-  - 1
-  axis: {x: -1, y: -0.1, z: 0}
+  jointPool: []
+  jointLevelPool: []
+  axis: {x: 0, y: 1, z: 0}
   angle: 0
-  maxAngle: 70
+  maxAngle: 90
   openLerpLevel: 0.3
   closeLerpLevel: 0.15
   isThumb: 0
@@ -4538,7 +4569,7 @@ MonoBehaviour:
   isAwakeAutoSetup: 0
   isEnableTouchControl: 1
   fingerType: 10
-  touchButtonPool: 
+  touchButtonPool: 10000000
   trigger: 2
   triggerStart: 0.257
   relatedTouchButton: 0
@@ -4657,8 +4688,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93f80d6b1f752de4ea03b5a00374c36e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemiesController: {fileID: 1917436146}
-  movieObject: {fileID: 1858124731}
+  enemiesController: {fileID: 0}
+  movieObject: {fileID: 0}
 --- !u!82 &1684780614
 AudioSource:
   m_ObjectHideFlags: 0
@@ -4749,7 +4780,7 @@ GameObject:
   - component: {fileID: 1686068528}
   m_Layer: 0
   m_Name: Right Hand Target
-  m_TagString: Untagged
+  m_TagString: RealHand
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4763,7 +4794,8 @@ Transform:
   m_LocalRotation: {x: 0, y: -0.7071068, z: -0.7071068, w: 0}
   m_LocalPosition: {x: -0, y: 0, z: -0.09}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 742909793}
   m_Father: {fileID: 962434043}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90, y: -90, z: -90}
@@ -4797,7 +4829,7 @@ MonoBehaviour:
   isAwakeAutoSetup: 0
   isEnableTouchControl: 1
   fingerType: 9
-  touchButtonPool: 
+  touchButtonPool: 10000000
   trigger: 2
   triggerStart: 0.254
   relatedTouchButton: 0
@@ -4833,7 +4865,7 @@ MonoBehaviour:
   isAwakeAutoSetup: 0
   isEnableTouchControl: 1
   fingerType: 8
-  touchButtonPool: 
+  touchButtonPool: 10000000
   trigger: 2
   triggerStart: 0.302
   relatedTouchButton: 0
@@ -4880,10 +4912,6 @@ Transform:
 GameObject:
   m_PrefabParentObject: {fileID: 100028, guid: 8cd032619f919c1439f9cdc58246d32e, type: 3}
   m_PrefabInternal: {fileID: 190509469}
---- !u!4 &1819898052 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 400028, guid: 8cd032619f919c1439f9cdc58246d32e, type: 3}
-  m_PrefabInternal: {fileID: 190509469}
 --- !u!114 &1819898053
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4895,20 +4923,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1c783e5021789246a1c461ec6bdfb4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isAwakeAutoSetup: 0
+  isAwakeAutoSetup: 1
   isEnableTouchControl: 1
-  fingerType: 3
+  fingerType: 1
   touchButtonPool: 
-  trigger: 1
-  triggerStart: 0.25
+  trigger: 0
+  triggerStart: 0
   relatedTouchButton: 0
-  jointPool:
-  - {fileID: 1819898052}
-  jointLevelPool:
-  - 1
-  axis: {x: -1, y: 0, z: 0}
+  jointPool: []
+  jointLevelPool: []
+  axis: {x: 0, y: 1, z: 0}
   angle: 0
-  maxAngle: 70
+  maxAngle: 90
   openLerpLevel: 0.3
   closeLerpLevel: 0.15
   isThumb: 0
@@ -4982,8 +5008,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 986d48ba29ccbff48835a8268259c0c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WatchMovie: {fileID: 15200000, guid: f01547d7c706bea4789653a7e73fd0aa, type: 3}
-  PunchMovie: {fileID: 15200000, guid: 8d26fb134449d33428b85b3a14e0a028, type: 3}
+  WatchMovie: {fileID: 0}
+  PunchMovie: {fileID: 0}
 --- !u!222 &1858124734
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5074,10 +5100,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cb277b2073cd328448389b85db081d23, type: 3}
   m_IsPrefabParent: 0
---- !u!4 &1914886193 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 400004, guid: cb277b2073cd328448389b85db081d23, type: 3}
-  m_PrefabInternal: {fileID: 1874788692}
 --- !u!1 &1917436144
 GameObject:
   m_ObjectHideFlags: 0
@@ -5121,22 +5143,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7de4ec2c0a865e4eb6f0eaf9f57c7de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RinoPrefab: {fileID: 1714628349655760, guid: ea8dc6d02448e784aa0de8895b518f20, type: 2}
-  TortoisePrefab: {fileID: 1268115021351486, guid: 7bb075bae9338fb4abf1059cc75c9f41,
-    type: 2}
-  UIImage: {fileID: 1684780609}
-  PlayerCamera: {fileID: 219266515}
-  SpawnedSpaces: {fileID: 1762733377}
+  RinoPrefab: {fileID: 0}
+  TortoisePrefab: {fileID: 0}
+  UIImage: {fileID: 0}
+  PlayerCamera: {fileID: 0}
+  SpawnedSpaces: {fileID: 0}
   SpawnedTransforms: []
-  middleTransform: {fileID: 924938711}
+  middleTransform: {fileID: 0}
 --- !u!4 &1917491610 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400042, guid: 8cd032619f919c1439f9cdc58246d32e, type: 3}
   m_PrefabInternal: {fileID: 190509469}
---- !u!4 &1920104003 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 400026, guid: cb277b2073cd328448389b85db081d23, type: 3}
-  m_PrefabInternal: {fileID: 1874788692}
 --- !u!1 &1921394040 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100020, guid: 8cd032619f919c1439f9cdc58246d32e, type: 3}
@@ -5242,10 +5259,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!4 &2009425765 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 400096, guid: cb277b2073cd328448389b85db081d23, type: 3}
-  m_PrefabInternal: {fileID: 1874788692}
 --- !u!1 &2018583416 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100104, guid: 8cd032619f919c1439f9cdc58246d32e, type: 3}
@@ -5268,7 +5281,7 @@ MonoBehaviour:
   isAwakeAutoSetup: 0
   isEnableTouchControl: 1
   fingerType: 7
-  touchButtonPool: 
+  touchButtonPool: 0100000002000000
   trigger: 2
   triggerStart: 0.64
   relatedTouchButton: 0
@@ -5358,10 +5371,10 @@ MonoBehaviour:
   isAwakeAutoSetup: 0
   isEnableTouchControl: 1
   fingerType: 7
-  touchButtonPool: 
+  touchButtonPool: 0100000002000000
   trigger: 2
   triggerStart: 0.639
-  relatedTouchButton: 0
+  relatedTouchButton: 1
   jointPool:
   - {fileID: 2025244017}
   jointLevelPool:
@@ -5394,7 +5407,7 @@ MonoBehaviour:
   isAwakeAutoSetup: 0
   isEnableTouchControl: 1
   fingerType: 11
-  touchButtonPool: 
+  touchButtonPool: 10000000
   trigger: 2
   triggerStart: 0.25
   relatedTouchButton: 0
@@ -5430,7 +5443,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2046488354}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: -0.07827437, z: -0.08}
+  m_LocalPosition: {x: -0, y: -0.07827437, z: -0.02}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 373913289}
@@ -5498,14 +5511,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d9d1fbfcf69364ffd8f9c6ade9ce90fe, type: 2}
   m_IsPrefabParent: 0
---- !u!4 &2085900219 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 400024, guid: cb277b2073cd328448389b85db081d23, type: 3}
-  m_PrefabInternal: {fileID: 1874788692}
---- !u!4 &2086313199 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 400014, guid: cb277b2073cd328448389b85db081d23, type: 3}
-  m_PrefabInternal: {fileID: 1874788692}
 --- !u!1 &2105685483 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: 24be8e1643b8a474fbb57fcda8a1c454, type: 2}
@@ -5587,10 +5592,6 @@ Prefab:
 GameObject:
   m_PrefabParentObject: {fileID: 100098, guid: 8cd032619f919c1439f9cdc58246d32e, type: 3}
   m_PrefabInternal: {fileID: 190509469}
---- !u!4 &2142648618 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 400098, guid: 8cd032619f919c1439f9cdc58246d32e, type: 3}
-  m_PrefabInternal: {fileID: 190509469}
 --- !u!114 &2142648619
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5602,23 +5603,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1c783e5021789246a1c461ec6bdfb4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isAwakeAutoSetup: 0
+  isAwakeAutoSetup: 1
   isEnableTouchControl: 1
-  fingerType: 2
+  fingerType: 1
   touchButtonPool: 
-  trigger: 1
-  triggerStart: 0.602
+  trigger: 0
+  triggerStart: 0
   relatedTouchButton: 0
-  jointPool:
-  - {fileID: 2142648618}
-  jointLevelPool:
-  - 1
-  axis: {x: -1, y: -0.7, z: 0}
+  jointPool: []
+  jointLevelPool: []
+  axis: {x: 0, y: 1, z: 0}
   angle: 0
-  maxAngle: 60
+  maxAngle: 90
   openLerpLevel: 0.3
   closeLerpLevel: 0.15
-  isThumb: 1
+  isThumb: 0
 --- !u!1 &2146803993 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100058, guid: 8cd032619f919c1439f9cdc58246d32e, type: 3}
@@ -5666,15 +5665,15 @@ MonoBehaviour:
     IKPosition: {x: 0, y: 0, z: 0}
     IKPositionWeight: 1
     root: {fileID: 0}
-    plantFeet: 0
+    plantFeet: 1
     spine:
       bones: []
       headTarget: {fileID: 2046488355}
       pelvisTarget: {fileID: 0}
       positionWeight: 1
       rotationWeight: 1
-      pelvisPositionWeight: 0
-      pelvisRotationWeight: 0.6
+      pelvisPositionWeight: 1
+      pelvisRotationWeight: 1
       chestGoal: {fileID: 0}
       chestGoalWeight: 0
       minHeadHeight: 0.8
@@ -5692,7 +5691,7 @@ MonoBehaviour:
       positionWeight: 0
       rotationWeight: 0
       shoulderRotationMode: 0
-      shoulderRotationWeight: 1
+      shoulderRotationWeight: 0
       bendGoalWeight: 0
       swivelOffset: 0
       wristToPalmAxis: {x: 0, y: 1, z: 0}
@@ -5705,24 +5704,24 @@ MonoBehaviour:
       rotationWeight: 1
       shoulderRotationMode: 0
       shoulderRotationWeight: 1
-      bendGoalWeight: 0.5
-      swivelOffset: 32
+      bendGoalWeight: 0
+      swivelOffset: 0
       wristToPalmAxis: {x: 0, y: 1, z: 0}
       palmToThumbAxis: {x: 0, y: 0, z: 1}
     leftLeg:
       bones: []
       target: {fileID: 0}
       bendGoal: {fileID: 0}
-      positionWeight: 1
-      rotationWeight: 1
+      positionWeight: 0
+      rotationWeight: 0
       bendGoalWeight: 0
       swivelOffset: 0
     rightLeg:
       bones: []
       target: {fileID: 0}
       bendGoal: {fileID: 0}
-      positionWeight: 1
-      rotationWeight: 1
+      positionWeight: 0
+      rotationWeight: 0
       bendGoalWeight: 0
       swivelOffset: 0
     locomotion:
@@ -5817,40 +5816,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onStretchStart:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1456879666}
-        m_MethodName: onStretchStart
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 622755896}
-        m_MethodName: playStretchingClip
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1199436943}
-        m_MethodName: CheckStretchState
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: StretchEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onStretching:
     m_PersistentCalls:
@@ -5864,62 +5830,7 @@ MonoBehaviour:
       PublicKeyToken=null
   onShrinkStart:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1456879666}
-        m_MethodName: onShrinkStart
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 622755896}
-        m_MethodName: stopStretchingClip
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 622755896}
-        m_MethodName: playShrinkingClip
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1199436943}
-        m_MethodName: CancelStretchState
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1199436943}
-        m_MethodName: CheckShrinkState
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   onShrinking:
@@ -5929,18 +5840,7 @@ MonoBehaviour:
       PublicKeyToken=null
   onShrinkEnd:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1199436943}
-        m_MethodName: CancelShrinkState
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   onCollide:
@@ -5948,11 +5848,11 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-  stretchTarget: {fileID: 163096321}
-  rightHandAnchor: {fileID: 962434043}
-  vrik: {fileID: 2146803995}
-  rightWrist: {fileID: 1199436940}
-  tempParentOfTarget: {fileID: 413813440}
+  stretchTarget: {fileID: 0}
+  rightHandAnchor: {fileID: 0}
+  vrik: {fileID: 0}
+  rightWrist: {fileID: 0}
+  tempParentOfTarget: {fileID: 0}
 --- !u!114 &2146803997
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5966,40 +5866,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   onStretchStart:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1456879666}
-        m_MethodName: onStretchStart
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 622755896}
-        m_MethodName: playStretchingClip
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1199436943}
-        m_MethodName: CheckStretchState
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: StretchEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   onStretching:
     m_PersistentCalls:
@@ -6013,62 +5880,7 @@ MonoBehaviour:
       PublicKeyToken=null
   onShrinkStart:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1456879666}
-        m_MethodName: onShrinkStart
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 622755896}
-        m_MethodName: stopStretchingClip
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 622755896}
-        m_MethodName: playShrinkingClip
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1199436943}
-        m_MethodName: CancelStretchState
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1199436943}
-        m_MethodName: CheckShrinkState
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   onShrinking:
@@ -6078,18 +5890,7 @@ MonoBehaviour:
       PublicKeyToken=null
   onShrinkEnd:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1199436943}
-        m_MethodName: CancelShrinkState
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
   onCollide:
@@ -6097,11 +5898,11 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
-  stretchTarget: {fileID: 163096321}
-  rightHandAnchor: {fileID: 962434043}
-  vrik: {fileID: 2146803995}
-  rightWrist: {fileID: 1199436940}
-  tempParentOfTarget: {fileID: 413813440}
+  stretchTarget: {fileID: 0}
+  rightHandAnchor: {fileID: 0}
+  vrik: {fileID: 0}
+  rightWrist: {fileID: 0}
+  tempParentOfTarget: {fileID: 0}
   state: 0
 --- !u!114 &2146803998
 MonoBehaviour:
@@ -6117,7 +5918,8 @@ MonoBehaviour:
   vrik: {fileID: 2146803995}
   leftController: 0
   invisibleAvatar: {fileID: 2146803994}
-  shoulder_right: {fileID: 1068852589}
+  shoulder_right: {fileID: 1563176168}
   upperarm: {fileID: 905265535}
-  forearm: {fileID: 190509470}
-  hand_right: {fileID: 962434043}
+  forearm: {fileID: 1428215248}
+  hand: {fileID: 1199436941}
+  touch_right: {fileID: 962434043}

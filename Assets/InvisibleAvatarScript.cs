@@ -8,7 +8,9 @@ public class InvisibleAvatarScript : MonoBehaviour
 	private Transform headTarget;
 	private Transform rightHandTarget;
 	private Vector3 handAccel;
-	private float headToHandDist;
+    private Vector3 handVelocity;
+    private Vector3 handPos;
+    private float headToHandDist;
     private float maxHeadToHandDist;
     private Vector3 maxHeadTargetPosition;
 	public bool leftController = false;
@@ -18,7 +20,8 @@ public class InvisibleAvatarScript : MonoBehaviour
     public Transform shoulder_right;
     public Transform upperarm;
     public Transform forearm;
-    public Transform hand_right;
+    public Transform hand;
+    public Transform touch_right;
     private bool firstCalibration = true;
     private bool secondCalibration = false;
 
@@ -32,7 +35,7 @@ public class InvisibleAvatarScript : MonoBehaviour
 		} else {
 			handAccel = OVRInput.GetLocalControllerAcceleration (OVRInput.Controller.LTouch);
 		}
-        avatarCalibrator = new AvatarCalibrator(invisibleAvatar, shoulder_right, upperarm, forearm, hand_right);
+        avatarCalibrator = new AvatarCalibrator(invisibleAvatar, shoulder_right, upperarm, forearm, hand, touch_right);
         vrik.enabled = false;
         GameObject rightWrist = GameObject.FindGameObjectWithTag("RightHand");
         GameObject rightShoulder = GameObject.FindGameObjectWithTag("InvisibleRightShoulder");
@@ -43,18 +46,19 @@ public class InvisibleAvatarScript : MonoBehaviour
 	// Update is called once per frame
 	void Update () {
         Vector3 headPos = headTarget.position;
-        Vector3 handPos = rightHandTarget.position;
+        handPos = rightHandTarget.position;
         headToHandDist = (rightHandTarget.position - headTarget.position).sqrMagnitude;
 		if (!leftController) {
 			handAccel = OVRInput.GetLocalControllerAcceleration (OVRInput.Controller.RTouch);
-		} else {
+            handVelocity = OVRInput.GetLocalControllerAcceleration(OVRInput.Controller.RTouch);
+        } else {
 			handAccel = OVRInput.GetLocalControllerAcceleration (OVRInput.Controller.LTouch);
-		}
+            handVelocity = OVRInput.GetLocalControllerAcceleration(OVRInput.Controller.LTouch);
+        }
         
         if (OVRInput.GetDown(OVRInput.RawButton.A)) {
             Debug.Log("A button is pushed");
-            maxHeadToHandDist = headToHandDist;
-            //Debug.Log(maxHeadToHandDist);
+            Debug.Log(touch_right.localEulerAngles);
         }
         if (OVRInput.GetDown(OVRInput.RawButton.B)) {
             Debug.Log("B button is pushed");
@@ -76,14 +80,17 @@ public class InvisibleAvatarScript : MonoBehaviour
             if (firstCalibration) { // calibratioin for position and scale of avatar
                 avatarCalibrator.calibrateAvatarPosition(headPos);
                 avatarCalibrator.calibrateAvatarScale(headPos);
-            }else if (!firstCalibration && !secondCalibration) {
+                Debug.Log("First Calibration");
+            } else if (!firstCalibration && !secondCalibration) {
                 if (!vrik.enabled) {
                     vrik.enabled = true;
+                    Debug.Log("VRIK ON");
                 }
                 secondCalibration = true;
             }else if (secondCalibration && avatarCalibrator.isArmParallel()) { // calibratioin for shoulder position and arm length of avatar
                 avatarCalibrator.calibrateShoulderPosition(headPos, handPos);
-                avatarCalibrator.calibrateArmLength(headPos, handPos);
+                //avatarCalibrator.calibrateArmLength(headPos, handPos);
+                Debug.Log("Second Calibration");
             }
            
         }
@@ -102,7 +109,15 @@ public class InvisibleAvatarScript : MonoBehaviour
 		return handAccel;
 	}
 
-	public float getHeadToHandDist(){
+    public Vector3 getHandVelocity() {
+        return handVelocity;
+    }
+
+    public Vector3 getHandPosition() {
+        return handPos;
+    }
+
+    public float getHeadToHandDist(){
 		return headToHandDist;
 	}
 }

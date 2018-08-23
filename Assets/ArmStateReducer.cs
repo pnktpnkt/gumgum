@@ -6,7 +6,7 @@ public class ArmStateReducer
 {
 	private float maxHandAccel = 0.0f;
 	private float accelerationThreshold = 17.0f;
-	private float headToHandDistThreshold = 0.30f;
+	private float headToHandDistThreshold = 0.20f;
 
 	public ArmStateReducer (){
 
