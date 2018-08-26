@@ -8,7 +8,7 @@ public class PsychologicalHandPositionMeasurer : MonoBehaviour {
     bool leftElbowFlag;
     private Vector3 leftElbowPos;
     private Vector3 leftHandPos;
-    private Logger logger;
+    private MyLogger logger;
     public int playerIndex = 0;
 
     // Use this for initialization
@@ -16,7 +16,7 @@ public class PsychologicalHandPositionMeasurer : MonoBehaviour {
         leftElbowFlag = false;
         leftElbowPos = Vector3.zero;
         leftHandPos = Vector3.zero;
-        logger = new Logger(playerIndex);
+        logger = new MyLogger(playerIndex);
     }
 
     // Update is called once per frame
