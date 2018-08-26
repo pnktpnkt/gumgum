@@ -8,11 +8,15 @@ public class PsychologicalHandPositionMeasurer : MonoBehaviour {
     bool leftElbowFlag;
     private Vector3 leftElbowPos;
     private Vector3 leftHandPos;
+    private Logger logger;
+    public int playerIndex = 0;
+
     // Use this for initialization
     void Start() {
         leftElbowFlag = false;
         leftElbowPos = Vector3.zero;
         leftHandPos = Vector3.zero;
+        logger = new Logger(playerIndex);
     }
 
     // Update is called once per frame
