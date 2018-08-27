@@ -4,7 +4,7 @@ using System.Collections;
 using System;
 
 public class PsychologicalHandPositionMeasurer : MonoBehaviour {
-    public Transform realRightHandTarget;
+    public Transform rightHandTarget;
     public Transform leftHandTarget;
     bool leftElbowFlag;
     private Vector3 leftElbowPos;
@@ -23,6 +23,7 @@ public class PsychologicalHandPositionMeasurer : MonoBehaviour {
     void Update() {
         if (Input.GetKeyDown(KeyCode.Space)) { // When pushing 'Space', undo deciding elbow postion.
             leftElbowFlag = false;
+            logger.log("------UNDO------");
         } else if (!leftElbowFlag) {
             if (OVRInput.GetDown(OVRInput.RawButton.X) || OVRInput.GetDown(OVRInput.RawButton.Y)) {
                 leftElbowPos = leftHandTarget.position;
@@ -30,12 +31,12 @@ public class PsychologicalHandPositionMeasurer : MonoBehaviour {
             }
         } else {
             if (OVRInput.GetDown(OVRInput.RawButton.X) || OVRInput.GetDown(OVRInput.RawButton.Y)) {
-                Vector3 realRightHandPos = realRightHandTarget.position;
+                Vector3 realRightHandPos = rightHandTarget.position;
                 double realAngle = getAngle(leftElbowPos, realRightHandPos);
-                logger.log("RealAngle" + logCount + " :" + realAngle);
+                logger.log("RealAngle" + logCount + " : " + realAngle);
                 Vector3 leftHandPos = leftHandTarget.position;
                 double virtualAngle = getAngle(leftElbowPos, leftHandPos);
-                logger.log("VirtualAngle" + logCount + " :" + virtualAngle);
+                logger.log("VirtualAngle" + logCount + " : " + virtualAngle);
                 logCount++;
                 Debug.Log(realAngle);
                 Debug.Log(virtualAngle);
@@ -45,8 +46,9 @@ public class PsychologicalHandPositionMeasurer : MonoBehaviour {
     }
 
     private double getAngle(Vector3 pos1, Vector3 pos2) {
-        double angle;
-        angle = Math.Atan((pos2.z - pos1.z) / (pos2.x - pos1.x));
+        double radian;
+        radian = Math.Atan(Math.Abs(pos2.z - pos1.z) / Math.Abs(pos2.x - pos1.x));
+        double angle = (radian * 180 / Math.PI); 
         return angle;
     }
 }

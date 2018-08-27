@@ -7,7 +7,7 @@ public class MyLogger
 
 	public MyLogger(int index)
 	{
-        filePath = @"C:\Desktop\data" + index + ".txt";
+        filePath = @"C:\Users\demo\Desktop\gumgum_data\data" + index + ".txt";
 	}
 
     public void log(string text)
