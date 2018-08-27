@@ -4,18 +4,18 @@ using System.Collections;
 using System;
 
 public class PsychologicalHandPositionMeasurer : MonoBehaviour {
+    public Transform realRightHandTarget;
     public Transform leftHandTarget;
     bool leftElbowFlag;
     private Vector3 leftElbowPos;
-    private Vector3 leftHandPos;
     private MyLogger logger;
     public int playerIndex = 0;
+    private int logCount = 0;
 
     // Use this for initialization
     void Start() {
         leftElbowFlag = false;
         leftElbowPos = Vector3.zero;
-        leftHandPos = Vector3.zero;
         logger = new MyLogger(playerIndex);
     }
 
@@ -30,9 +30,15 @@ public class PsychologicalHandPositionMeasurer : MonoBehaviour {
             }
         } else {
             if (OVRInput.GetDown(OVRInput.RawButton.X) || OVRInput.GetDown(OVRInput.RawButton.Y)) {
-                leftHandPos = leftHandTarget.position;
-                double leftElbowAngle = getAngle(leftElbowPos, leftHandPos);
-                Debug.Log(leftElbowAngle);
+                Vector3 realRightHandPos = realRightHandTarget.position;
+                double realAngle = getAngle(leftElbowPos, realRightHandPos);
+                logger.log("RealAngle" + logCount + " :" + realAngle);
+                Vector3 leftHandPos = leftHandTarget.position;
+                double virtualAngle = getAngle(leftElbowPos, leftHandPos);
+                logger.log("VirtualAngle" + logCount + " :" + virtualAngle);
+                logCount++;
+                Debug.Log(realAngle);
+                Debug.Log(virtualAngle);
             }
         }
         
