@@ -17,6 +17,7 @@ public class InvisibleAvatarScript : MonoBehaviour
 
     private AvatarCalibrator avatarCalibrator;
     public Transform invisibleAvatar;
+    public GameObject visibleAvatar;
     public Transform shoulder_right;
     public Transform upperarm;
     public Transform forearm;
@@ -24,6 +25,8 @@ public class InvisibleAvatarScript : MonoBehaviour
     public Transform touch_right;
     private bool firstCalibration = true;
     private bool secondCalibration = false;
+
+    public Transform target;
 
 	// Use this for initialization
 	void Start () {
@@ -78,6 +81,7 @@ public class InvisibleAvatarScript : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.C) || OVRInput.GetDown(OVRInput.RawButton.A))
         {
             if (firstCalibration) { // calibratioin for position and scale of avatar
+                visibleAvatar.SetActive(true);
                 avatarCalibrator.calibrateAvatarPosition(headPos);
                 avatarCalibrator.calibrateAvatarScale(headPos);
                 Debug.Log("First Calibration");
@@ -91,6 +95,10 @@ public class InvisibleAvatarScript : MonoBehaviour
                 avatarCalibrator.calibrateShoulderPosition(headPos, handPos);
                 //avatarCalibrator.calibrateArmLength(headPos, handPos);
                 Debug.Log("Second Calibration");
+            }else if (secondCalibration) {
+                //avatarCalibrator.calibrateShoulderPosition2(target.position, handPos);
+                avatarCalibrator.calibrateShoulderPosition2(target.position, hand.position);
+                Debug.Log("Second Calibration2");
             }
            
         }

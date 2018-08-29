@@ -77,6 +77,17 @@ public class AvatarCalibrator
         calibrateFlag = true;
     }
 
+    public void calibrateShoulderPosition2(Vector3 targetPos, Vector3 handPos) {
+        float x_s, y_s, z_s;
+        z_s = shoulder.position.z;
+        float a = Math.Abs(targetPos.z - z_s) / Math.Abs(targetPos.z - handPos.z);
+        x_s = targetPos.x + (handPos.x - targetPos.x) * a;
+        y_s = targetPos.y + (handPos.y - targetPos.y) * a;
+        shoulder.position = new Vector3(x_s, y_s, z_s);
+
+        calibrateFlag = true;
+    }
+
     public void calibrateArmLength(Vector3 headPos, Vector3 handPos)
     {
         float armLength = handPos.z - headPos.z;

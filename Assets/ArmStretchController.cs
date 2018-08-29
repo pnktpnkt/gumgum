@@ -51,8 +51,8 @@ public class ArmStretchController
             //ArmTranslate(deltaStretchLength());
             //ArmTranslate(stretchDirectionVec, deltaStretchLength());
             ArmTranslate(realHand.position-shoulder.position, deltaStretchLength());
-            drawSphereAt(realHand.position);
-            drawSphereAt(shoulder.position);
+            //drawSphereAt(realHand.position);
+            //drawSphereAt(shoulder.position);
             stretchCurrentTime += frameDeltaTime;
 		} else if (stretchCurrentTime >= stretchTotalTime) {
 			stretchCurrentTime = stretchTotalTime;

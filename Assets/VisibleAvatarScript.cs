@@ -15,6 +15,7 @@ public class VisibleAvatarScript : MonoBehaviour {
 	[SerializeField] ArmShrinkEvent onShrinkStart = new ArmShrinkEvent();
 
     public GameObject invisibleAvatar;
+    public GameObject vrikOFFObject;
     public float stretchDegree;
 	public float stretchTotalTime;
 
@@ -25,7 +26,7 @@ public class VisibleAvatarScript : MonoBehaviour {
 	private ArmState armState = ArmState.Idle;
 	private ArmState previousArmState = ArmState.Idle;
 	private ArmStateReducer armStateReducer;
-    private ControllerVelocityStorage cvs;
+    private ControllerPositionStorage cps;
     private bool stretchFlag = false;
     private bool Flag = false;
     private int updateCount = 0;
@@ -44,23 +45,23 @@ public class VisibleAvatarScript : MonoBehaviour {
 		GameObject translatedParentObject = GameObject.FindGameObjectWithTag ("StretchingJoint");
         //GameObject translatedParentObject = GameObject.FindGameObjectWithTag("RightShoulder");
         GameObject attackingObject = GameObject.FindGameObjectWithTag("AttackingObject");
-		imitator = new InvisibleAvatarMotionImitator (invisibleAvatar, visibleAvatar, translatedParentObject, attackingObject);
-		imitator.Imitate ();
+		//imitator = new InvisibleAvatarMotionImitator (invisibleAvatar, visibleAvatar, translatedParentObject, attackingObject);
+        imitator = new InvisibleAvatarMotionImitator(invisibleAvatar, visibleAvatar, vrikOFFObject, attackingObject);
+        imitator.Imitate ();
 
 		// setup ArmStateReducer
 		armStateReducer = new ArmStateReducer();
 
-        cvs = new ControllerVelocityStorage();
+        cps = new ControllerPositionStorage(10);
 	}
 
 	// Update is called once per frame
 	void Update () {
 		// for ArmStateReducer
 		Vector3 handAccel = invisibleAvatarScript.getHandAccel ();
-        Vector3 handVelocity = invisibleAvatarScript.getHandVelocity();
+        //Vector3 handVelocity = invisibleAvatarScript.getHandVelocity();
         Vector3 handPos = invisibleAvatarScript.getHandPosition();
-        cvs.add(handVelocity);
-        //cvs.add(handPos);
+        cps.add(handPos);
         float headToHandDist = invisibleAvatarScript.getHeadToHandDist ();
 		//Debug.Log ("handAccel : " + handAccel);
 		//Debug.Log ("headToHandDist : " + headToHandDist);
@@ -75,7 +76,7 @@ public class VisibleAvatarScript : MonoBehaviour {
         }
 
 		if (armState == ArmState.Stretching) {
-            //if (!stretchFlag) armStretchController.setStretchDirectionVec(cvs.getPunchDirection());
+            //if (!stretchFlag) armStretchController.setStretchDirectionVec(cps.getPunchDirection());
             stretchFlag = false;
             stretchingStateCount++;
             if (stretchingStateCount >= 1) {
@@ -87,7 +88,7 @@ public class VisibleAvatarScript : MonoBehaviour {
                 stretchFlag = true;
             }		
 		} else if (armState == ArmState.Shrinking) {
-            //if(stretchFlag) armStretchController.setStretchDirectionVec(cvs.getPunchDirection());
+            //if(stretchFlag) armStretchController.setStretchDirectionVec(cps.getPunchDirection());
                 armStretchController.Shrink();
                 if (previousArmState == ArmState.Stretching)
                     onShrinkStart.Invoke(handAccel, handAccel);

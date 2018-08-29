@@ -45,8 +45,9 @@ public class InvisibleAvatarMotionImitator
             if (!MatchesAttackingObjectName(child.name)) {
                 if (isArmStretching && MatchesStretchingObjectName(child.name))
                     isPositionCopied = false;
-                if (isPositionCopied)
+                if (isPositionCopied) {
                     child.position = invisibleAvatarChildTransforms[count].position;
+                }
                 child.rotation = invisibleAvatarChildTransforms[count].rotation;
                 count++;
             }

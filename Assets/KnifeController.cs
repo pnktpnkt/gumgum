@@ -23,14 +23,14 @@ public class KnifeController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         this.transform.localPosition = localVector;
-        if (Input.GetKeyDown(KeyCode.S) || OVRInput.GetDown(OVRInput.RawButton.A))
+        if (Input.GetKeyDown(KeyCode.S))
         {
             if (animationStart) attackStart = true;
             animationStart = true;
         }
         if (animationStart) animation.enabled = true;
         if(attackStart) attack();
-        if (Input.GetKeyDown(KeyCode.D) || OVRInput.GetDown(OVRInput.RawButton.B)) {
+        if (Input.GetKeyDown(KeyCode.D)) {
             this.transform.localPosition = tempVector;
             localVector = tempVector;
             //this.transform.localRotation = tempRotation;
