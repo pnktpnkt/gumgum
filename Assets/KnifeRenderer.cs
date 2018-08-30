@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class KnifeRenderer : MonoBehaviour {
+    private bool isRendered = false;
 
 	// Use this for initialization
 	void Start () {
@@ -13,8 +14,13 @@ public class KnifeRenderer : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         if (Input.GetKeyDown(KeyCode.A)) {
-            MeshRenderer meshrenderer = GetComponent<MeshRenderer>();
-            meshrenderer.enabled = true;
+            if (!isRendered) {
+                MeshRenderer meshrenderer = GetComponent<MeshRenderer>();
+                meshrenderer.enabled = true;
+            }else if (isRendered) {
+                MeshRenderer meshrenderer = GetComponent<MeshRenderer>();
+                meshrenderer.enabled = false;
+            }
         }
 	}
 }

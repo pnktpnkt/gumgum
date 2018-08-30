@@ -78,8 +78,8 @@ public class InvisibleAvatarScript : MonoBehaviour
         }
 
        
-        if (Input.GetKeyDown(KeyCode.C) || OVRInput.GetDown(OVRInput.RawButton.A))
-        {
+        if (Input.GetKeyDown(KeyCode.C)) { 
+        //if (Input.GetKeyDown(KeyCode.C) || OVRInput.GetDown(OVRInput.RawButton.A)) {
             if (firstCalibration) { // calibratioin for position and scale of avatar
                 visibleAvatar.SetActive(true);
                 avatarCalibrator.calibrateAvatarPosition(headPos);
@@ -92,7 +92,7 @@ public class InvisibleAvatarScript : MonoBehaviour
                 }
                 secondCalibration = true;
             }else if (secondCalibration && avatarCalibrator.isArmParallel()) { // calibratioin for shoulder position and arm length of avatar
-                avatarCalibrator.calibrateShoulderPosition(headPos, handPos);
+                //avatarCalibrator.calibrateShoulderPosition(headPos, handPos);
                 //avatarCalibrator.calibrateArmLength(headPos, handPos);
                 Debug.Log("Second Calibration");
             }else if (secondCalibration) {
@@ -103,8 +103,9 @@ public class InvisibleAvatarScript : MonoBehaviour
            
         }
 
-        if (Input.GetKeyDown(KeyCode.V) || OVRInput.GetDown(OVRInput.RawButton.B)) {
-            if (firstCalibration) {
+        if (Input.GetKeyDown(KeyCode.V)) {
+        //if (Input.GetKeyDown(KeyCode.V) || OVRInput.GetDown(OVRInput.RawButton.B)) {
+                if (firstCalibration) {
                 firstCalibration = false;
             }
             if (secondCalibration) {

@@ -8,6 +8,7 @@ public class KnifeController : MonoBehaviour {
     private Vector3 tempVector;
     private Quaternion tempRotation;
     private Animation animation;
+    private AudioSource audio;
     bool animationStart = false;
     bool attackStart = false;
     // Use this for initialization
@@ -18,6 +19,8 @@ public class KnifeController : MonoBehaviour {
         //tempRotation = this.transform.localRotation;
         animation = GetComponent<Animation>();
         animation.enabled = false;
+        audio = GetComponent<AudioSource>();
+        audio.enabled = false;
     }
 	
 	// Update is called once per frame
@@ -28,7 +31,10 @@ public class KnifeController : MonoBehaviour {
             if (animationStart) attackStart = true;
             animationStart = true;
         }
-        if (animationStart) animation.enabled = true;
+        if (animationStart) {
+            animation.enabled = true;
+            audio.enabled = true;
+        }
         if(attackStart) attack();
         if (Input.GetKeyDown(KeyCode.D)) {
             this.transform.localPosition = tempVector;
